@@ -22,4 +22,6 @@ class Coordinator < ActiveRecord::Base
                       :with => ReEmail,
                       :allow_nil => true,
                       :allow_blank => true)
+
+  scope :ordered_by_name, order("coordinators.last_name ASC, coordinators.first_name ASC")
 end

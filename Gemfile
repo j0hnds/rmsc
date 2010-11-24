@@ -28,5 +28,6 @@ gem 'mysql'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'rspec-rails', '~> 2.1.0'
+  gem 'factory_girl'
 #   gem 'webrat'
 end
