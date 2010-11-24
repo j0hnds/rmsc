@@ -93,4 +93,15 @@ describe CoordinatorsController do
     response.should be_success
     response.should render_template(:show)
   end
+
+  it "should allow an existing coordinator to be deleted" do
+    delete :destroy, { :id => @coordinator1.id }
+
+    response.should be_redirect
+    response.should redirect_to(coordinators_path)
+
+    # Make sure the coordinator was actually destroyed
+    coordinator = Coordinator.find_by_id(@coordinator1.id)
+    coordinator.should be nil
+  end
 end

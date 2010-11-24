@@ -37,4 +37,12 @@ class CoordinatorsController < ApplicationController
     @coordinator = Coordinator.find(params[:id])
   end
 
+  def destroy
+    coordinator = Coordinator.find(params[:id])
+
+    coordinator.destroy
+
+    redirect_to coordinators_path
+  end
+
 end
