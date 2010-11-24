@@ -6,7 +6,8 @@
 
   <body>
     <%= yield -%>
+    <%= render :partial => "/layouts/footer" -%>
+    <%= yield :bottom_load_js -%>
   </body>
 
-  <%= render :partial => "/layouts/footer" -%>
 </html>
