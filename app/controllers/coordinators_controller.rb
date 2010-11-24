@@ -1,5 +1,7 @@
 class CoordinatorsController < ApplicationController
 
+  layout 'primary'
+
   def index
     @coordinators = Coordinator.ordered_by_name
   end

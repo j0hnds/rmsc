@@ -1,0 +1,30 @@
+<table>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @coordinators.each do | coordinator | %>
+    <tr>
+      <td><%= link_to 'Edit', edit_coordinator_path(coordinator) -%></td>
+      <td><%= link_to 'Show', coordinator_path(coordinator) -%></td>
+      <td><%= link_to 'Delete', coordinator_path(coordinator) -%></td>
+      <td><%= format_coordinator_name(coordinator) -%></td>
+      <td><%= coordinator.phone -%></td>
+      <td><%= coordinator.email -%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

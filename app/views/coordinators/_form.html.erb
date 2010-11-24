@@ -1,7 +1,11 @@
 <%= form_for @coordinator do |f| %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :phone %>
-  <%= f.text_field :email %>
-  <%= submit_tag %>
+  <%= field_set_tag do %>
+  <ul>
+    <li><%= form_label_field f, :first_name %></li>
+    <li><%= form_label_field f, :last_name %></li>
+    <li><%= form_label_field f, :phone %></li>
+    <li><%= form_label_field f, :email %></li>
+  </ul>
+  <% end %>
+  <%= submit_tag 'Save Coordinator' %>
 <% end %>
