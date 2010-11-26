@@ -3,7 +3,7 @@ class CoordinatorsController < ApplicationController
   layout 'primary'
 
   def index
-    @coordinators = Coordinator.ordered_by_name
+    @coordinators = Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
