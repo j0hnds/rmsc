@@ -27,10 +27,12 @@
 		var settings = $.extend({}, $.simpleSpinner.defaults, options);
 
 		// Error checking
+        /*
 		if(!ABAQIS.errorCheck('$.simpleSpinner()',[{
 			check : function(){return typeof settings.message == 'string'},
 			log : '"message" type is incorrect'
 		}])){return;}
+		*/
 
 		// Remove any existing block
 		$.unblockUI();

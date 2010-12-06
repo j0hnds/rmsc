@@ -1,6 +1,6 @@
 class CoordinatorsController < ApplicationController
 
-  layout 'primary'
+  layout 'primary', :only => [ :index ]
 
   def index
     @coordinators = Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
@@ -15,8 +15,11 @@ class CoordinatorsController < ApplicationController
     
     if @coordinator.valid?
       @coordinator.save!
-      redirect_to coordinators_path and return
+      # redirect_to coordinators_path and return
+      render :action => :success and return if request.xhr?
     end
+
+    render :action => failure and return if request.xhr?
 
     render :new
   end

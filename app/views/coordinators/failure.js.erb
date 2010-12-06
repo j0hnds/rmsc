@@ -1,0 +1,7 @@
+/* Scroll to top of page */
+$('html, body').animate({scrollTop:0}, 'normal');
+
+/* Display error message */
+$('#module_messages')
+        .html('<%= render(:partial => '/shared/error_messages').to_s.gsub("'","\'") -%>')
+        .pulse();
