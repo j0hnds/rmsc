@@ -3,5 +3,5 @@ $('html, body').animate({scrollTop:0}, 'normal');
 
 /* Display error message */
 $('#module_messages')
-        .html('<%= render(:partial => '/shared/error_messages').to_s.gsub("'","\'") -%>')
+        .html('<%= render('/shared/error_messages', :target => @coordinator).to_s.gsub("'","\'") -%>')
         .pulse();

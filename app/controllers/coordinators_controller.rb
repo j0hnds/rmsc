@@ -15,11 +15,11 @@ class CoordinatorsController < ApplicationController
     
     if @coordinator.valid?
       @coordinator.save!
-      # redirect_to coordinators_path and return
+      @coordinators = Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
       render :action => :success and return if request.xhr?
     end
 
-    render :action => failure and return if request.xhr?
+    render :action => :failure and return if request.xhr?
 
     render :new
   end

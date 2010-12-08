@@ -33,6 +33,21 @@ $(function(){
 		}
 	});
 
+	// Handle AJAX form posts
+	$('.ajaxed').livequery(function(){
+		$(this).submit(function(event){
+			// Load required resources
+			if(!$.simpleAjax){$.require('jquery/jquery.simpleAjax.js');}
+			// Submit form
+			$.simpleAjax({
+				block_event : event,
+				url : this.action,
+				dataString : $(this).serialize()
+			});
+		});
+	});
+
+
 
 });
 
