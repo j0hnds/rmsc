@@ -41,7 +41,7 @@ $(function(){
 			// Submit form
 			$.simpleAjax({
 				block_event : event,
-				url : this.action,
+				url : this.action + '.js',
 				dataString : $(this).serialize()
 			});
 		});
