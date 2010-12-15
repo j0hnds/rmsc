@@ -1,8 +1,13 @@
 $('#record_manager')
     .fadeOut('fast', function() {
         $(this).empty();
+	$('#coordinators_list')
+	    .css('display', 'none')
+	    .html("<%= escape_javascript(render(:partial => 'list')) -%>")
+	    .fadeIn('fast');
+	$('#module_messages')
+	    .css('display', 'none')
+	    .html('<ul><li>It worked!!!</li></ul>')
+	    .fadeIn('fast');
     });
-$('#coordinators_list')
-    .css('display', 'none')
-    .html("<p>Stuff</p><%= escape_javascript(render(:partial => 'list')) -%>")
-    .fadeIn('fast');
+
