@@ -7,7 +7,7 @@ $('#record_manager')
 	    .fadeIn('fast');
 	$('#module_messages')
 	    .css('display', 'none')
-	    .html('<ul><li>It worked!!!</li></ul>')
+	    .html("<%= escape_javascript(render(:partial => '/shared/error_messages', :locals => { :target => @coordinator })) -%>")
 	    .fadeIn('fast');
     });
 
