@@ -7,5 +7,7 @@
     <li><%= form_label_field f, :email %></li>
   </ol>
   <% end %>
-  <%= submit_tag 'Save Coordinator' %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Save Coordinator' %>
+  <% end %>
 <% end %>

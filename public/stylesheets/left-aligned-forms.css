@@ -1,0 +1,28 @@
+/* To get the labels to left-align */
+label {
+    float: left;
+    width: 5em;
+    margin-right: 1em;
+}
+
+fieldset  {
+    float: left;
+    clear: left;
+    width: 100%;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+}
+
+fieldset li {
+    float: left;
+    clear: left;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+fieldset.submit {
+    float: none;
+    width: auto;
+    border: 0 none #FFF;
+    padding-left: 12em;
+}
