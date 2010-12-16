@@ -1,0 +1,53 @@
+.button_small, .button {
+    white-space: nowrap; /* Don't allow button labels to wrap */
+    text-align: center; /* center the text */
+    display: block; /* Make sure the thing is a block rather than span */
+    float: left;
+    height: 20px;
+    line-height: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#98B1CE #7b97b8 #7b97b8 #98B1CE;
+    padding: 0 10px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    background: #d7e2ee url("/images/interface/button_gradients.gif") 0 0 repeat-x;
+    color: #000 !important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px #FFF;
+    -moz-box-shadow: 0 1px 2px #FFF;
+    box-shadow: 0 1px 2px #FFF;
+    -webkit-background-clip: padding-box;
+    text-shadow:0 -1px 1px #778fa9;
+}
+
+a.button:hover, a.button_small:hover {
+    color: #FFF !important;
+}
+
+.button_small {
+    line-height: 14px;
+    font-size: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0 5px 0 0;
+    padding: 0 5px;
+}
+
+a.button_small {
+    height: 13px;
+}
+
+.button.default, .button_small.default {
+	font-weight:bold;
+	}
+.button.disabled, .button_small.disabled {
+    color: #cfd8e2 !important;
+    border-color: #cfd8e2;
+    cursor: default;
+}
