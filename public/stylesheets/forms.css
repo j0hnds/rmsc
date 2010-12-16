@@ -1,0 +1,77 @@
+/*
+ * This stylesheet is the basis for all form styling
+ */
+
+fieldset {
+    margin: 0 0 -1em 0;
+    padding: 0 0 1em 0;
+    /* border: 1px solid #024C68; */
+    background-color: #62B1D0;
+    /* border-style: none; */
+    border-top: 1px solid #024C68;
+    /* The following to support label wrapping */
+    float: left;
+    clear: both;
+    width: 100%;
+    /* The gradient */
+/*
+    background-image: -moz-linear-gradient(top, #FFFFFF, #62B1D0);
+    background-image: -webkit-gradient(linear, left top, left bottom,
+				       from(#FFFFFF), to(#62B1D0));
+*/
+}
+
+legend {
+    margin-left: 1em;
+    color: #000000;
+    font-weight: bold;
+    padding: 0;
+}
+
+legend span {
+    position: absolute;
+    margin-top: 0.5em;
+    font-size: 135%;
+}
+
+fieldset ol {
+    padding: 3.5em 1em 0 1em;
+    list-style: none;
+}
+
+fieldset li {
+    padding-bottom: 1em;
+    /* the following support label wrapping */
+    float: left;
+    clear: left; /* So we won't float up */
+    width: 100%; /* Need width if we are floating */
+    
+}
+
+fieldset.submit {
+    /* border-style: none; */
+    background-color: #62B1D0;
+    /* background-image: none; */
+    /* Deal with label wrapping behavior */
+    float: none;
+    width: auto;
+    /* border: 0 none #FFF; */
+    /* border-style: none; */
+    padding-top: 1.5em;
+    padding-left: 9em;
+}
+
+label {
+    float: left; /* To position the labels next to the form elements */
+    width: 7em; /* Adjust the width as appropriate for your forms */
+    margin-right: 1em; /* To keep the label at least 1em from the control */
+}
+
+/*
+label em {
+    display: block;
+    font-size: 85%;
+    font-style: normal;
+    text-transform: uppercase;
+}
+*/

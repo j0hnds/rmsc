@@ -8,37 +8,3 @@
  * Color5 = 62B1D0
  */
 
-fieldset {
-    margin: 1.5em 0 0 0;
-    padding: 0;
-    background-color: #62B1D0;
-    boder-style: none;
-    border-top: 1px solid #024C68;
-}
-
-legend {
-    margin-left: 1em;
-    padding: 0;
-    color: #000000;
-    font-weight: bold;
-}
-
-fieldset ol {
-    padding 1em 1em 0 1em;
-    list-style: none;
-}
-
-fieldset li {
-    padding-bottom: 1em;
-}
-
-fieldset.submit {
-    border-style: none;
-    background-color: transparent; 
-}
-
-label.required {
-    color: red;
-}
-
-

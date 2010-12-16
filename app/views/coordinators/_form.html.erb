@@ -1,5 +1,5 @@
 <%= form_for @coordinator, :html => { :id => form_id, :class => 'ajaxed' } do |f| %>
-  <%= field_set_tag "Coordinator Details" do %>
+  <%= field_set_tag "<span>Coordinator Details</span>".html_safe do %>
   <ol>
     <li><%= form_label_field f, :first_name %></li>
     <li><%= form_label_field f, :last_name %></li>
