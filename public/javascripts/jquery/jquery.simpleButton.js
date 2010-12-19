@@ -27,6 +27,7 @@
 				$button;
 
 		// Error checking
+        /*
 		if(!ABAQIS.errorCheck('$.simpleButton()',[{
 			check : function(){return typeof settings.block_event == 'boolean'},
 			log : '"block_event" type is incorrect'
@@ -46,6 +47,7 @@
 			check : function(){return typeof settings.callback == 'function'},
 			log : '"callback" type is incorrect'
 		}])){return;}
+		*/
 
 		// Create button element
 		if(settings.type == 'a'){

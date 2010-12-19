@@ -1,0 +1,13 @@
+$('#record_manager')
+    .fadeOut('fast', function() {
+        $(this).empty();
+	$('#coordinators_list')
+	    .css('display', 'none')
+	    .html("<%= escape_javascript(render(:partial => 'list')) -%>")
+	    .fadeIn('fast');
+	$('#module_messages')
+	    .css('display', 'none')
+	    .html("<%= escape_javascript(render(:partial => '/shared/error_messages', :locals => { :target => @coordinator })) -%>")
+	    .fadeIn('fast');
+    });
+

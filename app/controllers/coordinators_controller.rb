@@ -1,9 +1,9 @@
 class CoordinatorsController < ApplicationController
 
-  layout 'primary'
+  layout 'primary', :only => [ :index ]
 
   def index
-    @coordinators = Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+    @coordinators = ordered_by_name
   end
 
   def new
@@ -15,8 +15,11 @@ class CoordinatorsController < ApplicationController
     
     if @coordinator.valid?
       @coordinator.save!
-      redirect_to coordinators_path and return
+      @coordinators = ordered_by_name
+      render :action => :success and return if request.xhr?
     end
+
+    render :action => :failure and return if request.xhr?
 
     render :new
   end
@@ -29,8 +32,11 @@ class CoordinatorsController < ApplicationController
     @coordinator = Coordinator.find(params[:id])
 
     if @coordinator.update_attributes(params[:coordinator])
-      redirect_to coordinators_path and return
+      @coordinators = ordered_by_name
+      render :action => :success and return if request.xhr?
     end
+
+    render :action => :failure and return if request.xhr?
 
     render :edit
   end
@@ -45,6 +51,12 @@ class CoordinatorsController < ApplicationController
     coordinator.destroy
 
     redirect_to coordinators_path
+  end
+
+  private
+
+  def ordered_by_name
+    Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
   end
 
 end

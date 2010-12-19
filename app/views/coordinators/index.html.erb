@@ -4,10 +4,12 @@
 <% end %>
 <h1>Coordinators</h1>
 <div>
-  <p><%= link_to 'New Coordinator', new_coordinator_path -%></p>
+  <p><%= link_to 'New Coordinator', new_coordinator_path, :class => 'insert'-%></p>
 </div>
+<div id="coordinators_list">
 <% if @coordinators.empty? %>
 <p>No coordinators available for display</p>
 <% else %>
   <%= render :partial => 'list' -%>
 <% end %>
+</div>

@@ -1,0 +1,9 @@
+/* Scroll to top of page */
+$('html, body').animate({scrollTop:0}, 'normal', function() {
+    /* Display error message */
+    $('#module_messages')
+	.css('display', 'none')
+	.html("<%= escape_javascript(render(:partial => '/shared/error_messages', :locals => { :target => @coordinator })) -%>")
+	.fadeIn('fast');
+});
+

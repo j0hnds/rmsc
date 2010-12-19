@@ -5,6 +5,50 @@ $(function(){
     // Load required resources
     if (! $.log) { $.require('jquery/jquery.log.js'); }
     if (! $.simpleConfirm) { $.require('jquery/jquery.simpleConfirm.js'); }
+    if (! $.simpleInsert) { $.require('jquery/jquery.simpleInsert.js'); }
+
+	/*
+		Insert asynchronous content
+	*/
+	$('.insert').live('click',function (event) {
+
+		// Cache link
+		var url = this.href;
+
+		if(!$(this).hasClass('disabled')) {
+
+			// Insert content
+			$.simpleInsert({
+				block_event : event,
+				target : '#record_manager',
+				source : url,
+				use_spinner : false,
+				callback : function () {
+					// Scroll to top of page
+					$('html, body').animate({scrollTop:0}, 'normal');
+				}
+			});
+		} else {
+			event.preventDefault();
+		}
+	});
+
+	// Handle AJAX form posts
+	$('.ajaxed').livequery(function(){
+		$(this).submit(function(event){
+			// Load required resources
+			if(!$.simpleAjax){$.require('jquery/jquery.simpleAjax.js');}
+			// Submit form
+			$.simpleAjax({
+				block_event : event,
+				url : this.action + '.js',
+				dataString : $(this).serialize()
+			});
+		});
+	});
+
+
+
 });
 
 /* PLUGINS */

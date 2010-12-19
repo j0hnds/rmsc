@@ -18,9 +18,9 @@
   <tbody>
     <% @coordinators.each do | coordinator | %>
     <tr>
-      <td><%= link_to 'Edit', edit_coordinator_path(coordinator) -%></td>
-      <td><%= link_to 'Show', coordinator_path(coordinator) -%></td>
-      <td><%= link_to 'Delete', coordinator_path(coordinator) -%></td>
+      <td><%= link_to 'Edit', edit_coordinator_path(coordinator), :class => 'button_small insert' -%></td>
+      <td><%= link_to 'Show', coordinator_path(coordinator), :class => 'button_small insert' -%></td>
+      <td><%= link_to 'Delete', coordinator_path(coordinator), :class => 'button_small insert' -%></td>
       <td><%= format_coordinator_name(coordinator) -%></td>
       <td><%= coordinator.phone -%></td>
       <td><%= coordinator.email -%></td>

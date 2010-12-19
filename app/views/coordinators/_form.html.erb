@@ -1,12 +1,13 @@
-<%= form_for @coordinator, :html => { :id => form_id } do |f| %>
-  <%= render "shared/error_messages", :target => @coordinator -%>
-  <%= field_set_tag do %>
-  <ul>
+<%= form_for @coordinator, :html => { :id => form_id, :class => 'ajaxed' } do |f| %>
+  <%= field_set_tag "<span>Coordinator Details</span>".html_safe do %>
+  <ol>
     <li><%= form_label_field f, :first_name %></li>
     <li><%= form_label_field f, :last_name %></li>
     <li><%= form_label_field f, :phone %></li>
     <li><%= form_label_field f, :email %></li>
-  </ul>
+  </ol>
   <% end %>
-  <%= submit_tag 'Save Coordinator' %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Save Coordinator' %>
+  <% end %>
 <% end %>
