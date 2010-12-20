@@ -12,4 +12,8 @@ module ApplicationHelper
     label = "#{field_name.to_s.humanize}: <em><img src=\"images/required-star.png\" alt=\"required\" /></em>" if target.class.validators_on(field_name).map(&:class).include? ActiveModel::Validations::PresenceValidator
     label.html_safe
   end
+
+  def row_odd_even(row_index)
+    ((row_index % 2) == 0) ? 'even' : 'odd'
+  end
 end

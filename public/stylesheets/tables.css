@@ -1,0 +1,29 @@
+table {
+
+}
+
+table.data {
+    width: 80%;
+    font-size: smaller;
+}
+
+table.data {
+    border: none;
+    border-collapse: collapse;
+}
+table.data th {
+    border: none;
+    padding: 3px;
+}
+table.data td {
+    border: none;
+    padding: 3px;
+}
+
+tr.odd {
+    background-color: #3AA6D0;
+}
+
+tr.even {
+    background-color: #62B1D0;
+}

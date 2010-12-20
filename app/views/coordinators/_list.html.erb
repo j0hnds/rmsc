@@ -1,10 +1,10 @@
-<table>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
-  <col>
+<table class="data">
+  <col width="10%">
+  <col width="10%">
+  <col width="10%">
+  <col width="30%">
+  <col width="20%">
+  <col width="20">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -16,8 +16,8 @@
     </tr>
   </thead>
   <tbody>
-    <% @coordinators.each do | coordinator | %>
-    <tr>
+    <% @coordinators.each_with_index do | coordinator, index | %>
+    <tr class="<%= row_odd_even index -%>">
       <td><%= link_to 'Edit', edit_coordinator_path(coordinator), :class => 'button_small insert' -%></td>
       <td><%= link_to 'Show', coordinator_path(coordinator), :class => 'button_small insert' -%></td>
       <td><%= link_to 'Delete', coordinator_path(coordinator), :class => 'button_small insert' -%></td>
