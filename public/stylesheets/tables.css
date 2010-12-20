@@ -6,6 +6,12 @@ table.data {
     width: 80%;
     font-size: smaller;
 }
+table.data > thead > tr {
+    background-color: #3AA6D0;
+    border-bottom-color: #0776A0;
+    border-bottom-style: ridge;
+    /* border-bottom-width: thick; */
+}
 
 table.data {
     border: none;
