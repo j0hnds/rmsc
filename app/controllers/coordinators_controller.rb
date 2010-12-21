@@ -4,6 +4,7 @@ class CoordinatorsController < ApplicationController
 
   def index
     @coordinators = ordered_by_name
+    @search = get_search_term
   end
 
   def new
@@ -53,10 +54,20 @@ class CoordinatorsController < ApplicationController
     redirect_to coordinators_path
   end
 
+  def search
+    @search = get_search_term
+    @coordinators = ordered_by_name
+    render :action => :list_only
+  end
+
   private
 
   def ordered_by_name
-    Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+    if @search.blank?
+      Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+    else
+      Coordinator.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
 end

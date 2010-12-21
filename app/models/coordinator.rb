@@ -16,4 +16,5 @@ class Coordinator < ActiveRecord::Base
                     :format => { :with => RePhone }
 
   scope :ordered_by_name, order("coordinators.last_name ASC, coordinators.first_name ASC")
+  scope :filtered, lambda { | search | { :conditions => [ "first_name LIKE ? OR last_name LIKE ?", search, search ]}}
 end

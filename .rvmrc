@@ -1,6 +1,6 @@
-if [[ -s "/Users/dave/.rvm/environments/ruby-1.9.2-p0@rmsc" ]] ; then
-  . "/Users/dave/.rvm/environments/ruby-1.9.2-p0@rmsc"
+if [[ -s "/home/djs/.rvm/environments/ruby-1.9.2-p0" ]] ; then
+  . "/home/djs/.rvm/environments/ruby-1.9.2-p0"
 else
-  rvm --create use  "ruby-1.9.2-p0@rmsc"
+  rvm --create use  "ruby-1.9.2-p0"
 fi
 #rvm ruby-1.9.2-p0@rmsc

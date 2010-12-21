@@ -2,14 +2,18 @@
 <% content_for :bottom_load_js do -%>
    <%= javascript_include_tag "coordinators" -%>
 <% end %>
+
 <h1>Coordinators</h1>
+
 <div class="button_wrapper">
   <p><%= link_to 'New Coordinator', new_coordinator_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_coordinators_path } %>
 </div>
+
 <div id="coordinators_list">
-<% if @coordinators.empty? %>
-<p>No coordinators available for display</p>
-<% else %>
-  <%= render :partial => 'list' -%>
-<% end %>
+    <% if @coordinators.empty? %>
+    <p>No coordinators available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
 </div>

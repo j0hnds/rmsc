@@ -1,0 +1,7 @@
+<div class="search_form">
+<%= form_tag search_action do %>
+    <!--<%= label_tag :search, "Search: " %>-->
+    <%= text_field_tag :search, @search %>
+    <%= submit_tag "Search" %>
+<% end %>
+</div>
