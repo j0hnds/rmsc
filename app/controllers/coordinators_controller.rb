@@ -57,7 +57,7 @@ class CoordinatorsController < ApplicationController
   def search
     @search = get_search_term
     @coordinators = ordered_by_name
-    render :action => :list_only
+    # render :action => :list_only
   end
 
   private

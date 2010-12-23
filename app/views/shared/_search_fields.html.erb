@@ -1,7 +1,8 @@
 <div class="search_form">
-<%= form_tag search_action do %>
+<%= form_tag search_action, :class => 'ajaxed' do %>
     <!--<%= label_tag :search, "Search: " %>-->
     <%= text_field_tag :search, @search %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", :id => 'grid_search_submit', :name => 'submit[search]'%>
+    <%= submit_tag "Show All", :id => 'grid_search_show_all', :name => 'submit[cancel]' %>
 <% end %>
 </div>

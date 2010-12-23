@@ -28,6 +28,10 @@ gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branc
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
+#  gem 'awesome_print'
+#  gem 'hirb'
+#  gem 'looksee'
+#  gem 'wirble'
   gem 'rspec-rails', '~> 2.1.0'
   gem 'factory_girl'
 #   gem 'webrat'

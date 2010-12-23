@@ -47,6 +47,12 @@ $(function(){
 		});
 	});
 
+    // Handle search clear
+    $('#grid_search_show_all').live('click', function(event){
+       $('input#search').val('');
+       $(this).submit();
+    });
+
 
 
 });
