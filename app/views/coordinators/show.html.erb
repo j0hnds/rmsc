@@ -5,3 +5,10 @@
   <li><strong>Phone:</strong> <%= @coordinator.phone -%></li>
   <li><strong>Email:</strong> <%= @coordinator.email -%></li>
 </ul>
+<hr>
+<form class="ajaxed" action="<%= coordinator_path(@coordinator) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Coordinator' %>
+  <% end %>
+</form>

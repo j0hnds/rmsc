@@ -96,7 +96,7 @@ describe CoordinatorsController do
     get :show, { :id => @coordinator1.id }
 
     coordinator = assigns[:coordinator]
-    coordinator.should_not be nil
+    coordinator.should_not be_nil
     coordinator.id.should == @coordinator1.id
 
     response.should be_success
@@ -106,11 +106,17 @@ describe CoordinatorsController do
   it "should allow an existing coordinator to be deleted" do
     delete :destroy, { :id => @coordinator1.id }
 
-    response.should be_redirect
-    response.should redirect_to(coordinators_path)
+    response.should render_template(:show)
+
+    coordinator = assigns[:coordinator]
+    coordinator.should_not be_nil
+
+    coordinators = assigns[:coordinators]
+    coordinators.should_not be_nil
+    coordinators.empty?.should be_true
 
     # Make sure the coordinator was actually destroyed
     coordinator = Coordinator.find_by_id(@coordinator1.id)
-    coordinator.should be nil
+    coordinator.should be_nil
   end
 end

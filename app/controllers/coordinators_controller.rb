@@ -48,11 +48,15 @@ class CoordinatorsController < ApplicationController
   end
 
   def destroy
-    coordinator = Coordinator.find(params[:id])
+    @coordinator = Coordinator.find(params[:id])
 
-    coordinator.destroy
+    @coordinator.destroy
 
-    redirect_to coordinators_path
+    @coordinators = ordered_by_name
+
+    render :action => :success and return if request.xhr?
+
+    render :show
   end
 
   def search
