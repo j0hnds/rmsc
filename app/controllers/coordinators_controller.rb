@@ -2,7 +2,7 @@ class CoordinatorsController < ApplicationController
 
   layout 'primary', :only => [ :index ]
 
-  before_filter :get_search_term, :only => [ :index, :create, :update, :destroy ]
+  before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
     @coordinators = ordered_by_name

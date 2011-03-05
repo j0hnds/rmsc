@@ -18,4 +18,5 @@ class ApplicationController < ActionController::Base
   def search_key
     "#{request[:controller]}_search"
   end
+
 end

@@ -1,0 +1,19 @@
+<% content_for :title, 'Venues' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "venues" -%>
+<% end %>
+
+<h1>Venues</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'New Venue', new_venue_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_venues_path } %>
+</div>
+
+<div id="venues_list">
+    <% if @venues.empty? %>
+    <p>No venues available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>

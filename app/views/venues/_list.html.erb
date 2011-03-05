@@ -1,0 +1,25 @@
+<table class="data">
+  <col width="5%">
+  <col width="5%">
+  <col width="40%">
+  <col width="50%">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @venues.each_with_index do | venue, index | %>
+    <tr class="<%= row_odd_even index -%>">
+      <td><%= link_to 'Edit', edit_venue_path(venue), :class => 'button_small insert' -%></td>
+      <td><%= link_to 'Show', venue_path(venue), :class => 'button_small insert' -%></td>
+      <td><%= venue.name %></td>
+      <td><%= format_venue_address(venue).html_safe -%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @venues -%>

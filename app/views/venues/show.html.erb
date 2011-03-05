@@ -1,0 +1,13 @@
+<h1>Venue</h1>
+
+<ul>
+  <li><strong>Name:</strong> <%= @venue.name -%></li>
+  <li><%= format_venue_address(@venue).html_safe -%></li>
+</ul>
+<hr>
+<form class="ajaxed" action="<%= venue_path(@venue) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Venue' %>
+  <% end %>
+</form>
