@@ -13,6 +13,9 @@ describe CoordinatorsController do
     coordinators.should_not be nil
     coordinators.size.should be 1
 
+    search = assigns[:search]
+    search.blank?.should be_true
+
     response.should be_success
     response.should render_template(:index)
   end
@@ -34,10 +37,13 @@ describe CoordinatorsController do
         :email => 'harrold.jones@email.com' } }
     
     coordinator = assigns[:coordinator]
-    coordinator.should_not be nil
+    coordinator.should_not be_nil
 
-    response.should be_redirect
-    response.should redirect_to(coordinators_path)
+    coordinators = assigns[:coordinators]
+    coordinators.should_not be_nil
+    coordinators.size.should be 2 # The newly created one and the one created in 'begin'
+
+    response.should render_template(:new)
   end
 
   it "should display a form to allow the user to edit an existing coordinator" do
@@ -71,8 +77,11 @@ describe CoordinatorsController do
     coordinator.phone.should == "909 999 9999"
     coordinator.email.should == @coordinator1.email
 
-    response.should be_redirect
-    response.should redirect_to(coordinators_path)
+    coordinators = assigns[:coordinators]
+    coordinators.should_not be_nil
+    coordinators.size.should be 1
+
+    response.should render_template(:edit)
 
     # Verify that the changes have been saved
     coordinator = Coordinator.find(@coordinator1.id)
