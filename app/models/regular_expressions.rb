@@ -17,4 +17,6 @@ module RegularExpressions
  
    \z # End of string
  }xi # Case insensitive
+
+  RePostalCode = /\A\d{5}(-\d{1,4})?\z/
 end

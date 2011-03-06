@@ -4,4 +4,8 @@ module VenueHelper
     address << "<br>#{venue.address_2}" unless venue.address_2.blank?
     address << "<br>#{venue.city}, #{venue.state} #{venue.postal_code}"
   end
+
+  def format_venue(venue)
+    "#{venue.name}, #{venue.address_1} #{venue.city}"
+  end
 end

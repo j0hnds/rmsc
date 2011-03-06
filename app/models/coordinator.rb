@@ -1,6 +1,8 @@
 class Coordinator < ActiveRecord::Base
   include RegularExpressions
 
+  has_many :shows
+
   validates :first_name, :presence => true,
                          :length => { :minimum => 1, :maximum => 20 }
 

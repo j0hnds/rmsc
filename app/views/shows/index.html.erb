@@ -1,0 +1,19 @@
+<% content_for :title, 'Shows' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "shows" -%>
+<% end %>
+
+<h1>Shows</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'New Show', new_show_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_shows_path } %>
+</div>
+
+<div id="shows_list">
+    <% if @shows.empty? %>
+    <p>No shows available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>

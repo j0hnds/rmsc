@@ -20,6 +20,10 @@ Rmsc::Application.routes.draw do
     post :search, :on => :collection
   end
 
+  resources :shows do
+    post :search, :on => :collection
+  end
+
   # Sample resource route with options:
   #   resources :products do
   #     member do

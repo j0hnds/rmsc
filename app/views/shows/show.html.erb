@@ -1,0 +1,16 @@
+<h1>Show</h1>
+
+<ul>
+  <li><strong>Name:</strong> <%= @show.name -%></li>
+  <li><strong>Show Dates:</strong> <%= format_date_range(@show.start_date, @show.end_date) -%></li>
+  <li><strong>Next Show Dates:</strong> <%= format_date_range(@show.next_start_date, @show.next_end_date) -%></li>
+  <li><strong>Venue:</strong> <%= format_venue(@show.venue) %></li>
+  <li><strong>Coordinator:</strong> <%= format_coordinator_name(@show.coordinator) %></li>
+</ul>
+<hr>
+<form class="ajaxed" action="<%= show_path(@show) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Show' %>
+  <% end %>
+</form>

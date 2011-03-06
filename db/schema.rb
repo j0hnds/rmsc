@@ -10,13 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305201356) do
+ActiveRecord::Schema.define(:version => 20110305223849) do
 
   create_table "coordinators", :force => true do |t|
     t.string   "first_name", :limit => 20, :null => false
     t.string   "last_name",  :limit => 20, :null => false
     t.string   "email",                    :null => false
     t.string   "phone",      :limit => 14, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shows", :force => true do |t|
+    t.string   "name",            :limit => 40
+    t.date     "start_date"
+    t.date     "end_date"
+    t.date     "next_start_date"
+    t.date     "next_end_date"
+    t.integer  "coordinator_id"
+    t.integer  "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
