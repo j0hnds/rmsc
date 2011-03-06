@@ -1,0 +1,4 @@
+$('#buyers_list')
+  .css('display', 'none')
+  .html('<%= escape_javascript( render(:partial => "list")) %>')
+  .fadeIn(200);

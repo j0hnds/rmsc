@@ -1,0 +1,15 @@
+<h1>Buyer</h1>
+
+<ul>
+  <li><strong>Store:</strong> <%= format_store(@buyer.store) %></li>
+  <li><strong>Name:</strong> <%= format_buyer_name(@buyer) -%></li>
+  <li><strong>Phone:</strong> <%= @buyer.phone -%></li>
+  <li><strong>Email:</strong> <%= @buyer.email -%></li>
+</ul>
+<hr>
+<form class="ajaxed" action="<%= buyer_path(@buyer) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Buyer' %>
+  <% end %>
+</form>

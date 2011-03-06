@@ -1,0 +1,31 @@
+<table class="data">
+  <col width="5%">
+  <col width="5%">
+  <col width="20%">
+  <col width="30%">
+  <col width="20%">
+  <col width="20%">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Store</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @buyers.each_with_index do | buyer, index | %>
+    <tr class="<%= row_odd_even index -%>">
+      <td><%= link_to 'Edit', edit_buyer_path(buyer), :class => 'button_small insert' -%></td>
+      <td><%= link_to 'Show', buyer_path(buyer), :class => 'button_small insert' -%></td>
+      <td><%= format_buyer_name(buyer) -%></td>
+      <td><%= format_store(buyer.store) %></td>
+      <td><%= buyer.phone -%></td>
+      <td><%= buyer.email -%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @buyers -%>

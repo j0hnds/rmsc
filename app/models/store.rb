@@ -1,6 +1,8 @@
 class Store < ActiveRecord::Base
   include RegularExpressions
 
+  has_many :buyers
+
   validates :name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :address, :length => { :minimum => 1, :maximum => 60 }, :allow_blank => true, :allow_nil => true
   validates :city, :length => { :minimum => 1, :maximum => 60 }, :allow_blank => true, :allow_nil => true

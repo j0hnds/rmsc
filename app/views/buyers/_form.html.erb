@@ -1,0 +1,14 @@
+<%= form_for @buyer, :html => { :id => form_id, :class => 'ajaxed' } do |f| %>
+  <%= field_set_tag "<span>Buyer Details</span>".html_safe do %>
+  <ol>
+    <li><%= f.label :store_id, mark_required(f.object, :store_id) %><%= select_tag "buyer[store_id]", options_for_select(store_options(@stores), f.object.store_id)%></li>
+    <li><%= form_label_field f, :first_name %></li>
+    <li><%= form_label_field f, :last_name %></li>
+    <li><%= form_label_field f, :phone %></li>
+    <li><%= form_label_field f, :email %></li>
+  </ol>
+  <% end %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Save Buyer' %>
+  <% end %>
+<% end %>

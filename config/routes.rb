@@ -12,6 +12,10 @@ Rmsc::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :buyers do
+    post :search, :on => :collection
+  end
+
   resources :coordinators do
     post :search, :on => :collection
   end

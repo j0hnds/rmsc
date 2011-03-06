@@ -1,0 +1,19 @@
+<% content_for :title, 'Buyers' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "buyers" -%>
+<% end %>
+
+<h1>Buyers</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'New Buyer', new_buyer_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_buyers_path } %>
+</div>
+
+<div id="buyers_list">
+    <% if @buyers.empty? %>
+    <p>No buyers available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>

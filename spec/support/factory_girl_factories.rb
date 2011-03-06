@@ -45,3 +45,10 @@ Factory.define :store do |f|
   f.fax '404 444 4444'
   f.email 'shoe_store@mail.com'
 end
+
+Factory.define :buyer do |f|
+  f.first_name 'Joe'
+  f.last_name 'Buyer'
+  f.phone '303 333 3333'
+  f.email 'joe.buyer@mail.com'
+end
