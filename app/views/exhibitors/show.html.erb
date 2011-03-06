@@ -1,0 +1,17 @@
+<h1>Exhibitor</h1>
+
+<ul>
+  <li><strong>Name:</strong> <%= format_exhibitor_name(@exhibitor) -%></li>
+  <li><%= format_exhibitor_address(@exhibitor).html_safe %></li>
+  <li><strong>Phone:</strong> <%= @exhibitor.phone -%></li>
+  <li><strong>Fax:</strong> <%= @exhibitor.fax -%></li>
+  <li><strong>Cell:</strong> <%= @exhibitor.cell -%></li>
+  <li><strong>Email:</strong> <%= @exhibitor.email -%></li>
+</ul>
+<hr>
+<form class="ajaxed" action="<%= exhibitor_path(@exhibitor) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Exhibitor' %>
+  <% end %>
+</form>

@@ -1,0 +1,37 @@
+<table class="data">
+  <col width="5%">
+  <col width="5%">
+  <col width="20%">
+  <col width="30%">
+  <col width="10%">
+  <col width="10%">
+  <col width="10%">
+  <col width="10%">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Cell</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exhibitors.each_with_index do | exhibitor, index | %>
+    <tr class="<%= row_odd_even index -%>">
+      <td><%= link_to 'Edit', edit_exhibitor_path(exhibitor), :class => 'button_small insert' -%></td>
+      <td><%= link_to 'Show', exhibitor_path(exhibitor), :class => 'button_small insert' -%></td>
+      <td><%= format_exhibitor_name(exhibitor) -%></td>
+      <td><%= format_exhibitor_address(exhibitor).html_safe -%></td>
+      <td><%= exhibitor.phone -%></td>
+      <td><%= exhibitor.fax -%></td>
+      <td><%= exhibitor.cell -%></td>
+      <td><%= exhibitor.email -%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @exhibitors -%>

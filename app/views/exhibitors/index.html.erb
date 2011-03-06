@@ -1,0 +1,19 @@
+<% content_for :title, 'Exhibitors' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "exhibitors" -%>
+<% end %>
+
+<h1>Exhibitors</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'New Exhibitor', new_exhibitor_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_exhibitors_path } %>
+</div>
+
+<div id="exhibitors_list">
+    <% if @exhibitors.empty? %>
+    <p>No exhibitors available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>

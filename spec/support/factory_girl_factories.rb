@@ -21,3 +21,16 @@ Factory.define :show do |f|
   f.next_start_date Date.today
   f.next_end_date Date.today + 1.day
 end
+
+Factory.define :exhibitor do |f|
+  f.first_name 'Joe'
+  f.last_name 'Exhibitor'
+  f.address '123 Main St'
+  f.city 'San Andreas'
+  f.state 'GA'
+  f.postal_code '01101-2345'
+  f.phone '202-222-2222'
+  f.fax '202-222-2222'
+  f.cell '202-222-2222'
+  f.email 'joe.exhibitor@mail.com'
+end
