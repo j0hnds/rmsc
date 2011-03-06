@@ -11,6 +11,8 @@ Factory.define :venue do |f|
   f.city 'Santa Monica'
   f.state 'SD'
   f.postal_code '11100-2222'
+  f.phone '101 111 1111'
+  f.fax '202 222 2222'
 end
 
 # For create, must specify a venue and a coordinator

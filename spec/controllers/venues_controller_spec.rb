@@ -35,7 +35,9 @@ describe VenuesController do
         :address_1 => 'Jones',
         :city => 'Santa Monica',
         :state => 'SD',
-        :postal_code => '00101'} }
+        :postal_code => '00101',
+        :phone => '111 111 1111',
+        :fax => '222 222 2222' } }
     
     venue = assigns[:venue]
     venue.should_not be_nil

@@ -7,6 +7,9 @@
     <li><%= form_label_field f, :city %></li>
     <li><%= f.label :state, mark_required(f.object, :state) %><%= select_tag "venue[state]", options_for_select(state_options, f.object.state)%></li>
     <li><%= form_label_field f, :postal_code %></li>
+    <li><%= form_label_field f, :phone %></li>
+    <li><%= form_label_field f, :fax %></li>
+    <li><%= form_label_field f, :reservation %></li>
   </ol>
   <% end %>
   <%= field_set_tag nil, :class => 'submit'  do -%>

@@ -3,6 +3,9 @@
 <ul>
   <li><strong>Name:</strong> <%= @venue.name -%></li>
   <li><%= format_venue_address(@venue).html_safe -%></li>
+  <li><strong>Phone:</strong> <%= @venue.phone -%></li>
+  <li><strong>Fax:</strong> <%= @venue.fax -%></li>
+  <li><strong>Reservation:</strong> <%= @venue.reservation -%></li>
 </ul>
 <hr>
 <form class="ajaxed" action="<%= venue_path(@venue) %>" method="POST">
