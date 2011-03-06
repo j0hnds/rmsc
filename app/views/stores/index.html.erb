@@ -1,0 +1,19 @@
+<% content_for :title, 'Stores' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "stores" -%>
+<% end %>
+
+<h1>Stores</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'New Store', new_store_path, :class => 'insert button'-%></p>
+  <%= render :partial => '/shared/search_fields', :locals => { :search_action => search_stores_path } %>
+</div>
+
+<div id="stores_list">
+    <% if @stores.empty? %>
+    <p>No stores available for display</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>

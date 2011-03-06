@@ -1,0 +1,16 @@
+<h1>Store</h1>
+
+<ul>
+  <li><strong>Name:</strong> <%= @store.name -%></li>
+  <li><%= format_store_address(@store).html_safe %></li>
+  <li><strong>Phone:</strong> <%= @store.phone -%></li>
+  <li><strong>Fax:</strong> <%= @store.fax -%></li>
+  <li><strong>Email:</strong> <%= @store.email -%></li>
+</ul>
+<hr>
+<form class="ajaxed" action="<%= store_path(@store) %>" method="POST">
+  <%= hidden_field_tag :_method, "delete" %>
+  <%= field_set_tag nil, :class => 'submit'  do -%>
+    <%= submit_tag 'Delete Store' %>
+  <% end %>
+</form>

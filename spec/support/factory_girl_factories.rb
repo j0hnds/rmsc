@@ -34,3 +34,14 @@ Factory.define :exhibitor do |f|
   f.cell '202-222-2222'
   f.email 'joe.exhibitor@mail.com'
 end
+
+Factory.define :store do |f|
+  f.name 'Shoe Store'
+  f.address '123 Main'
+  f.city 'Aberdeen'
+  f.state 'CT'
+  f.postal_code '90111'
+  f.phone '303 333 3333'
+  f.fax '404 444 4444'
+  f.email 'shoe_store@mail.com'
+end

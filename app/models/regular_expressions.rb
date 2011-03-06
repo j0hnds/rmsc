@@ -5,9 +5,9 @@ module RegularExpressions
   ReEmail = %r{
    \A # Start of string
  
-   [0-9a-z] # First character
-   [0-9a-z.+]+ # Middle characters
-   [0-9a-z] # Last character
+   [0-9a-zA-Z] # First character
+   [0-9a-zA-Z_'.+-]+ # Middle characters
+   [0-9a-zA-Z] # Last character
  
    @ # Separating @ character
  
