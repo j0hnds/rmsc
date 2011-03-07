@@ -4,6 +4,8 @@ class Show < ActiveRecord::Base
   has_many :registrations
   has_many :exhibitors, :through => :registrations
   has_many :rooms, :through => :registrations
+  has_many :attendances
+  has_many :buyers, :through => :attendances
 
   validates :name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :start_date, :presence => true

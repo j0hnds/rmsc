@@ -10,12 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307130059) do
+ActiveRecord::Schema.define(:version => 20110307150433) do
 
   create_table "associates", :force => true do |t|
     t.integer "room_id",                  :null => false
     t.string  "first_name", :limit => 40
     t.string  "last_name",  :limit => 40
+  end
+
+  create_table "attendances", :force => true do |t|
+    t.integer "show_id",  :null => false
+    t.integer "buyer_id", :null => false
   end
 
   create_table "buyers", :force => true do |t|

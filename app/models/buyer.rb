@@ -2,6 +2,8 @@ class Buyer < ActiveRecord::Base
   include RegularExpressions
 
   belongs_to :store
+  has_many :attendances
+  has_many :shows, :through => :attendances
 
   validates :first_name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :last_name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
