@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110306212318) do
+ActiveRecord::Schema.define(:version => 20110307130059) do
+
+  create_table "associates", :force => true do |t|
+    t.integer "room_id",                  :null => false
+    t.string  "first_name", :limit => 40
+    t.string  "last_name",  :limit => 40
+  end
 
   create_table "buyers", :force => true do |t|
     t.string   "first_name", :limit => 40
@@ -44,6 +50,22 @@ ActiveRecord::Schema.define(:version => 20110306212318) do
     t.string   "email",       :limit => 80
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "lines", :force => true do |t|
+    t.integer "room_id",               :null => false
+    t.integer "order",                 :null => false
+    t.string  "line",    :limit => 80, :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.integer "show_id",      :null => false
+    t.integer "exhibitor_id", :null => false
+  end
+
+  create_table "rooms", :force => true do |t|
+    t.integer "registration_id", :null => false
+    t.string  "room"
   end
 
   create_table "shows", :force => true do |t|

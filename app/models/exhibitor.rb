@@ -1,6 +1,10 @@
 class Exhibitor < ActiveRecord::Base
   include RegularExpressions
 
+  has_many :registrations
+  has_many :shows, :through => :registrations
+  has_many :rooms, :through => :registrations
+
   validates :first_name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :last_name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :address, :presence => true, :length => { :minimum => 1, :maximum => 60 }

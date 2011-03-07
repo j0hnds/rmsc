@@ -54,3 +54,21 @@ Factory.define :buyer do |f|
   f.phone '303 333 3333'
   f.email 'joe.buyer@mail.com'
 end
+
+Factory.define :registration do |f|
+
+end
+
+Factory.define :room do |f|
+  f.room '1201'
+end
+
+Factory.define :associate do |f|
+  f.first_name 'Jim'
+  f.last_name 'Associate'
+end
+
+Factory.define :line do |f|
+  f.order 1
+  f.line 'Line 1'
+end

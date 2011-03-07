@@ -1,6 +1,9 @@
 class Show < ActiveRecord::Base
   belongs_to :coordinator
   belongs_to :venue
+  has_many :registrations
+  has_many :exhibitors, :through => :registrations
+  has_many :rooms, :through => :registrations
 
   validates :name, :presence => true, :length => { :minimum => 1, :maximum => 40 }
   validates :start_date, :presence => true
