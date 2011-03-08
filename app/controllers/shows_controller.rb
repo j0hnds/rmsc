@@ -68,6 +68,12 @@ class ShowsController < ApplicationController
     @shows = ordered_by_name
   end
 
+  def set_current_show
+    show = params[:show_id]
+    session[:current_show] = show.to_i if show
+    redirect_to "/"
+  end
+
   private
 
   def ordered_by_name

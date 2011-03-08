@@ -53,6 +53,11 @@ $(function(){
        $(this).submit();
     });
 
+    // Handle show selection
+    $('#show_id').live('change', function(event){
+        // alert('The show id changed');
+        $('form#show_select_form').submit();
+    });
 
 
 });

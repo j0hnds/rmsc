@@ -1,3 +1,10 @@
 <header>
-  <p>RMSC | <%= yield :title -%></p>
+  <div style="height:20px;">
+    <div style="float:left;width:20em;text-align:left;">RMSC | <%= yield :title -%></div>
+    <div style="float:right;text-align:right;">
+      <%= form_tag set_current_show_shows_path, :id => "show_select_form" do %>
+        <%= label_tag :show_id %><%= select_tag :show_id, options_for_select(show_options(@show_list), @current_show.id) %>
+      <% end %>
+    </div>
+  </div>
 </header>

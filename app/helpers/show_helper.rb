@@ -13,4 +13,8 @@ module ShowHelper
   def format_date_range(start_date, end_date)
     "#{start_date.strftime(DATE_FORMAT)} -- #{end_date.strftime(DATE_FORMAT)}"
   end
+
+  def show_options(shows)
+    shows.collect { | s | [ s.name, s.id ]}
+  end
 end

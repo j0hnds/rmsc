@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  include ShowContext
+
+  before_filter :identify_current_show
+
   protect_from_forgery
 
   private

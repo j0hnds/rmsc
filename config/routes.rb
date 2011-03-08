@@ -30,6 +30,7 @@ Rmsc::Application.routes.draw do
 
   resources :shows do
     post :search, :on => :collection
+    post :set_current_show, :on => :collection
   end
 
   resources :stores do

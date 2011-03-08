@@ -16,6 +16,7 @@ class Show < ActiveRecord::Base
   validates :venue_id, :presence => true
 
   scope :ordered_by_name, order("shows.name ASC")
+  scope :ordered_by_most_recent, order('shows.start_date DESC')
   scope :filtered, lambda { | search | { :conditions => [ "name LIKE ?", "%#{search}%" ]}}
 
   def set_default_show_dates
