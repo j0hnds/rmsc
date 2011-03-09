@@ -17,6 +17,8 @@ class ExhibitorsController < ApplicationController
 
     if @exhibitor.valid?
       @exhibitor.save!
+
+      @exhibitor.shows << @current_show if params[:attending_current_show] == 'yes'
       @exhibitors = ordered_by_name
       render :action => :success and return if request.xhr?
     end
@@ -34,6 +36,7 @@ class ExhibitorsController < ApplicationController
     @exhibitor = Exhibitor.find(params[:id])
 
     if @exhibitor.update_attributes(params[:exhibitor])
+      @exhibitor.shows << @current_show if params[:attending_current_show] == 'yes'
       @exhibitors = ordered_by_name
       render :action => :success and return if request.xhr?
     end

@@ -18,6 +18,7 @@ class Show < ActiveRecord::Base
   scope :ordered_by_name, order("shows.name ASC")
   scope :ordered_by_most_recent, order('shows.start_date DESC')
   scope :filtered, lambda { | search | { :conditions => [ "name LIKE ?", "%#{search}%" ]}}
+  scope :latest_show, order("shows.start_date DESC, shows.id DESC").limit(1)
 
   def set_default_show_dates
     self.start_date, self.end_date = show_dates_after_date(Date.today)

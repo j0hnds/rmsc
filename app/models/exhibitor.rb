@@ -18,4 +18,16 @@ class Exhibitor < ActiveRecord::Base
 
   scope :ordered_by_name, order("exhibitors.last_name ASC, exhibitors.first_name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "first_name LIKE :name_match OR last_name LIKE :name_match", :name_match => "%#{search}%" ]}}
+
+  def eligible_for_show_registration?(show)
+    # So, the exhibitor is eligible if:
+    #  * new exhibitor
+    #  * show is not already associated
+    self.new_record? || !self.shows.include?(show)
+  end
+
+  def registered_for_show?(show)
+    self.persisted? && self.shows.include?(show)
+  end
+
 end
