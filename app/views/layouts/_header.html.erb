@@ -7,4 +7,29 @@
       <% end %>
     </div>
   </div>
+  <div id="menu">
+    <ul class="menu">
+      <li><%= link_to span_menu("Home"), root_path %></li>
+      <li>
+        <%= link_to span_menu("Show Definition"), '#', :class => "parent" %>
+        <div>
+          <ul>
+            <li><%= link_to span_menu("Coordinators"), coordinators_path %></li>
+            <li><%= link_to span_menu("Venues"), venues_path %></li>
+            <li><%= link_to span_menu("Shoes"), shows_path %></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <%= link_to span_menu("Retailers"), '#', :class => "parent" %>
+        <div>
+          <ul>
+            <li><%= link_to span_menu("Stores"), stores_path %></li>
+            <li><%= link_to span_menu("Buyers"), buyers_path %></li>
+          </ul>
+        </div>
+      </li>
+      <li class="last"><%= link_to span_menu("Exhibitors"), exhibitors_path %></li>
+    </ul>
+  </div>
 </header>

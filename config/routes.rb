@@ -37,6 +37,8 @@ Rmsc::Application.routes.draw do
     post :search, :on => :collection
   end
 
+  root :to => "dashboard#index"
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
