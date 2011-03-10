@@ -44,4 +44,12 @@ class Show < ActiveRecord::Base
       [ next_show, next_show + 1.day ]
     end
   end
+
+  def register_exhibitor(exhibitor, lines=nil, associates=nil)
+    registration = Registration.create(:show => self, :exhibitor => exhibitor)
+
+    registration.initialize_registration(lines, associates)
+
+    registration
+  end
 end

@@ -18,7 +18,8 @@ class ExhibitorsController < ApplicationController
     if @exhibitor.valid?
       @exhibitor.save!
 
-      @exhibitor.shows << @current_show if params[:attending_current_show] == 'yes'
+      @exhibitor.register_for_show(@current_show, params[:lines], params[:associates]) if params[:attending_current_show] == 'yes'
+
       @exhibitors = ordered_by_name
       render :action => :success and return if request.xhr?
     end

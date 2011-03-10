@@ -13,6 +13,8 @@
     <li><%= form_label_field f, :email %></li>
     <% if @exhibitor.eligible_for_show_registration?(@current_show) %>
     <li><%= hidden_field_tag :attending_current_show, "no" %><%= f.label :attending_current_show %><%= check_box_tag :attending_current_show, 'yes' %></li>
+    <li><%= label_tag :lines %><%= text_field_tag :lines %></li>
+    <li><%= label_tag :associates %><%= text_field_tag :associates %></li>
     <% else %>
         <% if @exhibitor.registered_for_show?(@current_show) %>
         <li>Registered for show: <%= @current_show.name %></li>
