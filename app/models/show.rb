@@ -52,4 +52,16 @@ class Show < ActiveRecord::Base
 
     registration
   end
+
+  def number_of_lines
+    count = 0
+    self.rooms.each do | room |
+      count += room.lines.size
+    end
+    count
+  end
+
+  def number_of_stores
+    self.buyers.collect(&:store_id).uniq.size
+  end
 end

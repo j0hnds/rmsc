@@ -4,3 +4,77 @@
 <% end %>
 
 <h1>Dashboard</h1>
+
+<% if @current_show %>
+<h2>Statistics for Show: <%= @current_show.name %></h2>
+
+<table>
+  <col/>
+  <col/>
+  <tbody>
+    <tr>
+      <td colspan=2>Exhibitor Statistics</td>
+    </tr>
+    <tr>
+      <td>Exhibitors Registered</td>
+      <td><%= @current_show.registrations.size %></td>
+    </tr>
+    <tr>
+      <td>Number of rooms</td>
+      <td><%= @current_show.rooms.size %></td>
+    </tr>
+    <tr>
+      <td>Number of lines</td>
+      <td><%= @current_show.number_of_lines %></td>
+    </tr>
+    <% if Date.today > @current_show.end_date %>
+    <tr>
+      <td colspan=2>Exhibitor Statistics</td>
+    </tr>
+    <tr>
+      <td>Stores Represented</td>
+      <td><%= @current_show.number_of_stores %></td>
+    </tr>
+    <tr>
+      <td>Buyers Attending</td>
+      <td><%= @current_show.buyers.size %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+<h2>Overall Statistics</h2>
+
+<table>
+  <col/>
+  <col/>
+  <tbody>
+    <tr>
+      <td>Number of Shows</td>
+      <td><%= @number_of_shows %></td>
+    </tr>
+    <tr>
+      <td>Number of Venues</td>
+      <td><%= @number_of_venues %></td>
+    </tr>
+    <tr>
+      <td>Number of Coordinators</td>
+      <td><%= @number_of_coordinators %></td>
+    </tr>
+    <tr>
+      <td>Number of Exhibitors</td>
+      <td><%= @number_of_exhibitors %></td>
+    </tr>
+    <tr>
+      <td>Number of Stores</td>
+      <td><%= @number_of_stores %></td>
+    </tr>
+    <tr>
+      <td>Number of Buyers</td>
+      <td><%= @number_of_buyers %></td>
+    </tr>
+  </tbody>
+
+</table>
