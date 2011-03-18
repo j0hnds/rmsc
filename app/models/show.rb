@@ -64,4 +64,8 @@ class Show < ActiveRecord::Base
   def number_of_stores
     self.buyers.collect(&:store_id).uniq.size
   end
+
+  def number_of_exhibitors
+    self.exhibitors.size
+  end
 end

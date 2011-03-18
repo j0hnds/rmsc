@@ -1,0 +1,293 @@
+/**
+ * ---------------------------------------------------------------------
+ * ---------------------------------------------------------------------
+ * DATE PICKER STYLESHEET
+ * ---------------------------------------------------------------------
+ * ---------------------------------------------------------------------
+ */
+
+table.jCalendar {
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-width:1px;
+	border-style:solid;
+	background:#FFF;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	-webkit-background-clip:padding-box; /* fix corner bleed in Safari */
+	font-size:13px;
+	width:auto;
+	}
+table.jCalendar th {
+	text-align:center;
+	font-weight: bold;
+	padding: 5px;
+	color:#FFF !important;
+	text-shadow:none;
+	border-width:0;
+	}
+table.jCalendar td {
+	padding: 3px 5px;
+	text-align: center;
+	}
+table.jCalendar td.today {
+	padding: 2px 4px;
+	border-style:solid;
+	border-width:1px;
+	}
+table.jCalendar td.other-month {
+	background: #ddd !important;
+	color: #FFF !important;
+	}
+table.jCalendar td.selected {
+	background: #F90 !important;
+	}
+table.jCalendar td.selected.dp-hover {
+	background: #F90;
+	color: #444;
+	}
+table.jCalendar td.dp-hover,
+table.jCalendar tr.activeWeekHover td {
+	background: #fff;
+	color: #000;
+	}
+table.jCalendar tr.selectedWeek td {
+	background: #f66;
+	color: #fff;
+	}
+table.jCalendar td.disabled,
+table.jCalendar td.disabled.dp-hover {
+	padding: 2px 4px;
+	border-style:solid;
+	border-width:1px;
+	background: #FFF !important;
+	border-color:#F4F4F4 !important;
+	color: #CCC !important;
+	}
+table.jCalendar td.unselectable,
+table.jCalendar td.unselectable:hover,
+table.jCalendar td.unselectable.dp-hover {
+	background: #bbb;
+	color: #888;
+	}
+
+/* For the popup */
+.dp-choose-date,
+.dp-nav-next-year,
+.dp-nav-prev-year {
+	display:none;
+	}
+div.dp-popup {
+	background: #ccc;
+	position: relative;
+	font-size: 13px;
+	font-family: arial, sans-serif;
+	padding: 2px;
+/* 	width: 171px; */
+	line-height: 1.2em;
+	}
+div#dp-popup {
+	position: absolute;
+	z-index: 199;
+	border-width:1px;
+	border-style:solid;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-webkit-background-clip:padding-box; /* fix corner bleed in Safari */
+	-moz-box-shadow:0 3px 5px #444;
+	-webkit-box-shadow:0 3px 5px #444;
+	box-shadow:0 3px 5px #444;
+	background-size:100% 20px;
+	background-repeat:no-repeat;
+	}
+div.dp-popup h2 {
+	font-size: 12px;
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+	}
+a#dp-close {
+	font-size: 11px;
+	padding: 4px 0;
+	text-align: center;
+	display: block;
+	}
+a#dp-close:hover {
+	text-decoration: underline;
+	}
+/*
+	Opera needs the rules to be this specific
+	otherwise it doesn't change the cursor back
+	to pointer after you have disabled and
+	re-enabled a link
+*/
+div.dp-popup a {
+	color: #000;
+	text-decoration: none;
+	padding: 3px 2px 0;
+	}
+.dp-nav-prev-month,
+.dp-nav-next-month {
+	display:block;
+/* 	text-indent:-3333px; */
+/* 	width:0; */
+/* 	height:0; */
+/* 	line-height:0; */
+	padding:0 !important;
+/* 	border-style:solid; */
+	}
+.dp-nav-prev-month {
+/* 	border-width:5px 5px 5px 0; */
+	}
+.dp-nav-next-month {
+/* 	border-width:5px 0 5px 5px; */
+	}
+div.dp-popup div.dp-nav-prev {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 100px;
+	}
+div.dp-popup div.dp-nav-next {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 100px;
+	}
+div.dp-popup div.dp-nav-prev a {
+	float: left;
+	}
+div.dp-popup div.dp-nav-prev a,
+div.dp-popup div.dp-nav-next a {
+	cursor: pointer;
+	}
+div.dp-popup div.dp-nav-prev a.disabled,
+div.dp-popup div.dp-nav-next a.disabled {
+	cursor: default;
+	}
+div.dp-popup div.dp-nav-next a {
+	float: right;
+	}
+div.dp-popup a.disabled {
+	color: #aaa;
+	cursor: default;
+	}
+div.dp-popup td {
+	cursor: pointer;
+	}
+div.dp-popup td.disabled {
+	cursor: default;
+	}
+
+/* Admin */
+
+table.jCalendar {
+	border-color:#d6d6d6 #e7e7e7 #e7e7e7 #d6d6d6;
+	}
+table.jCalendar th {
+	background: #333;
+	}
+table.jCalendar td {
+	background: #E9E9E9;
+	color: #333;
+	}
+table.jCalendar td.today {
+	background: #E9E9E9;
+	border-color:#666;
+	color:#333;
+	-moz-box-shadow:inset 0 0 2px #666;
+	-webkit-box-shadow:inset 0 0 2px #666;
+	box-shadow:inset 0 0 2px #666;
+	}
+table.jCalendar td.selected {
+	color: #333;
+	}
+#dp-popup {
+	border-color:#e7e7e7 #d6d6d6 #d6d6d6 #e7e7e7;
+	background-color:#E9E9E9; /* old browsers */
+	background-image:-moz-linear-gradient(top, #F5F5F5 0%, #E9E9E9 100%); /* firefox */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#F5F5F5), color-stop(100%,#E9E9E9)); /* webkit */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#F5F5F5', endColorstr='#E9E9E9',GradientType=0 ); /* ie */
+	}
+.dp-nav-prev-month {
+/* 	border-color:transparent #333 transparent transparent; */
+	}
+.dp-nav-next-month {
+/* 	border-color:transparent transparent transparent #333; */
+	}
+
+/* Stage 1 */
+
+#stage1_module table.jCalendar {
+	border-color:#c1cad3 #cfd8e2 #cfd8e2 #c1cad3;
+	}
+#stage1_module table.jCalendar th {
+	background: #264C73;
+	}
+#stage1_module table.jCalendar td {
+	background: #E9EFF6;
+	color: #264C73;
+	}
+#stage1_module table.jCalendar td.today {
+	background: #E9EFF6;
+	border-color:#264C73;
+	color:#264C73;
+	-moz-box-shadow:inset 0 0 2px #264C73;
+	-webkit-box-shadow:inset 0 0 2px #264C73;
+	box-shadow:inset 0 0 2px #264C73;
+	}
+#stage1_module table.jCalendar td.selected {
+	color: #264C73;
+	}
+#stage1_module #dp-popup {
+	border-color:#dae3ec #c1cad3 #c1cad3 #dae3ec;
+	background-color:#D7E2EE; /* old browsers */
+	background-image:-moz-linear-gradient(top, #EAEFF5 0%, #D7E2EE 100%); /* firefox */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EAEFF5), color-stop(100%,#D7E2EE)); /* webkit */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAEFF5', endColorstr='#D7E2EE',GradientType=0 ); /* ie */
+	}
+#stage1_module .dp-nav-prev-month {
+/* 	border-color:transparent #264C73 transparent transparent; */
+	}
+#stage1_module .dp-nav-next-month {
+/* 	border-color:transparent transparent transparent #264C73; */
+	}
+
+/* Stage 2 */
+
+#stage2_module table.jCalendar {
+	border-color:#c7cdb6 #d5dbc3 #d5dbc3 #c7cdb6;
+	}
+#stage2_module table.jCalendar th {
+	background: #6b8669;
+	}
+#stage2_module table.jCalendar td {
+	background: #E0E6CD;
+	color: #6b8669;
+	}
+#stage2_module table.jCalendar td.today {
+	background: #E0E6CD;
+	border-color:#6b8669;
+	color:#6b8669;
+	-moz-box-shadow:inset 0 0 2px #6b8669;
+	-webkit-box-shadow:inset 0 0 2px #6b8669;
+	box-shadow:inset 0 0 2px #6b8669;
+	}
+#stage2_module table.jCalendar td.selected {
+	color: #6b8669;
+	}
+#stage2_module #dp-popup {
+	border-color:#d5dbc3 #c7cdb6 #c7cdb6 #d5dbc3;
+	background-color:#E0E6CE; /* old browsers */
+	background-image:-moz-linear-gradient(top, #EEF2E2 0%, #E0E6CE 100%); /* firefox */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEF2E2), color-stop(100%,#E0E6CE)); /* webkit */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEF2E2', endColorstr='#E0E6CE',GradientType=0 ); /* ie */
+	}
+#stage2_module .dp-nav-prev-month {
+/* 	border-color:transparent #6b8669 transparent transparent; */
+	}
+#stage2_module .dp-nav-next-month {
+/* 	border-color:transparent transparent transparent #6b8669; */
+	}

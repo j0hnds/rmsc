@@ -92,6 +92,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] arel (v2.0.6, /Users/dave/.rvm/gems/ruby-1.9.2-p0@rmsc/gems/arel-2.0.6)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] i18n (v0.5.0, /Users/dave/.rvm/gems/ruby-1.9.2-p0@rmsc/gems/i18n-0.5.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mail (v2.2.12, /Users/dave/.rvm/gems/ruby-1.9.2-p0@rmsc/gems/mail-2.2.12)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] seer (v0.9.1, /Users/dave/.rvm/gems/ruby-1.9.2-p0@rmsc/gems/seer-0.9.1)" level="application" />
   </component>
 </module>
 

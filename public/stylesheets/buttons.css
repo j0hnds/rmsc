@@ -104,3 +104,36 @@ div.pagination span.previous_page, div.pagination span.next_page div.pagination 
   -webkit-border-top-left-radius:5px;
 
 }
+
+.date_picker_wrapper {
+	position:relative;
+	display:-moz-inline-stack;
+	display:inline-block;
+	}
+.ie6 .date_picker_wrapper,
+.ie7 .date_picker_wrapper {
+	display:block;
+	zoom:1;
+	}
+.date_picker_calendar {
+	position:absolute;
+	top:0;
+	right:-2px;
+	background-image:url("/images/tiles.png");
+	width:21px;
+	height:20px;
+	border-width:1px;
+	border-style:solid;
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+	-webkit-background-clip:padding-box;
+	}
+.date_picker_calendar img {
+	position:relative;
+	top:2px;
+	left:3px;
+	}

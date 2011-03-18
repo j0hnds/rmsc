@@ -12,7 +12,7 @@ module RegularExpressions
    @ # Separating @ character
  
    [0-9a-z] # Domain name begin
-   [0-9a-z.-]+ # Domain name middle
+   [0-9a-z._-]+ # Domain name middle
    [0-9a-z] # Domain name end
  
    \z # End of string

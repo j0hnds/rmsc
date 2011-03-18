@@ -2,10 +2,10 @@
   <%= field_set_tag "<span>Show Details</span>".html_safe do %>
   <ol>
     <li><%= form_label_field f, :name %></li>
-    <li><%= form_label_field f, :start_date %></li>
-    <li><%= form_label_field f, :end_date %></li>
-    <li><%= form_label_field f, :next_start_date %></li>
-    <li><%= form_label_field f, :next_end_date %></li>
+    <li><%= form_label_field f, :start_date, "date_picker_unlimited" %></li>
+    <li><%= form_label_field f, :end_date, "date_picker_unlimited" %></li>
+    <li><%= form_label_field f, :next_start_date, "date_picker_unlimited" %></li>
+    <li><%= form_label_field f, :next_end_date, "date_picker_unlimited" %></li>
     <li><%= f.label :coordinator_id, mark_required(f.object, :coordinator_id) %><%= select_tag "show[coordinator_id]", options_for_select(coordinator_options(@coordinators), f.object.coordinator_id)%></li>
     <li><%= f.label :venue_id, mark_required(f.object, :venue_id) %><%= select_tag "show[venue_id]", options_for_select(venue_options(@venues), f.object.venue_id)%></li>
   </ol>

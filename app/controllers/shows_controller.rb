@@ -5,7 +5,7 @@ class ShowsController < ApplicationController
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
-    @shows = ordered_by_name
+    @shows = ordered_by_most_recent
   end
 
   def new
@@ -20,7 +20,7 @@ class ShowsController < ApplicationController
 
     if @show.valid?
       @show.save!
-      @shows = ordered_by_name
+      @shows = ordered_by_most_recent
       render :action => :success and return if request.xhr?
     end
 
@@ -39,7 +39,7 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
 
     if @show.update_attributes(params[:show])
-      @shows = ordered_by_name
+      @shows = ordered_by_most_recent
       render :action => :success and return if request.xhr?
     end
 
@@ -57,7 +57,7 @@ class ShowsController < ApplicationController
 
     @show.destroy
 
-    @shows = ordered_by_name
+    @shows = ordered_by_most_recent
 
     render :action => :success and return if request.xhr?
 
@@ -65,7 +65,7 @@ class ShowsController < ApplicationController
   end
 
   def search
-    @shows = ordered_by_name
+    @shows = ordered_by_most_recent
   end
 
   def set_current_show
@@ -76,11 +76,11 @@ class ShowsController < ApplicationController
 
   private
 
-  def ordered_by_name
+  def ordered_by_most_recent
     if @search.blank?
-      Show.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Show.ordered_by_most_recent.paginate(:page => params[:page], :per_page => 5)
     else
-      Show.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Show.filtered(@search).ordered_by_most_recent.paginate(:page => params[:page], :per_page => 5)
     end
   end
 

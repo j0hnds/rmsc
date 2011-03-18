@@ -59,6 +59,47 @@ $(function(){
         $('form#show_select_form').submit();
     });
 
+	/*
+		Date picker fields that don't have limitations on the dates being picked.
+	*/
+	$('.date_picker_unlimited').livequery(function () {
+
+		Date.firstDayOfWeek = 0;
+		Date.format = 'yyyy-mm-dd';
+
+		var $picker = $(this),
+				showPicker = function () {
+					if(!$picker.hasClass('disabled')) {
+						$picker.dpDisplay();
+					}
+				};
+
+		// Add button
+		if(!$.browser.msie || ($.browser.msie && $.browser.version >= 8) ){
+			var $icon = $('<img>')
+						.attr('src','/images/interface/calendar.gif')
+						.click(showPicker),
+					$button = $('<div>')
+						.addClass('date_picker_calendar')
+						.click(showPicker)
+						.append($icon);
+			$picker.wrap('<div class="date_picker_wrapper"/>').after($button);
+		}
+
+		$picker
+			.attr('readonly',true)
+			.datePicker({
+				createButton : false,
+				startDate : '1970-01-01',
+				clickInput : true
+			})
+			.bind('click',function () {
+				$(this).dpDisplay();
+				this.blur();
+				return false;
+			})
+			.trigger('change');
+	});
 
 });
 
