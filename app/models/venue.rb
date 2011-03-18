@@ -15,4 +15,7 @@ class Venue < ActiveRecord::Base
 
   scope :ordered_by_name, order("venues.name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "name LIKE ?", "%#{search}%" ]}}
+
+  @@per_page = 30
+
 end

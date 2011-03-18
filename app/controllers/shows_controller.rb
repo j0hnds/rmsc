@@ -78,9 +78,9 @@ class ShowsController < ApplicationController
 
   def ordered_by_most_recent
     if @search.blank?
-      Show.ordered_by_most_recent.paginate(:page => params[:page], :per_page => 5)
+      Show.ordered_by_most_recent.paginate(:page => params[:page])
     else
-      Show.filtered(@search).ordered_by_most_recent.paginate(:page => params[:page], :per_page => 5)
+      Show.filtered(@search).ordered_by_most_recent.paginate(:page => params[:page])
     end
   end
 

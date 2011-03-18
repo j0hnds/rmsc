@@ -69,9 +69,9 @@ class BuyersController < ApplicationController
 
   def ordered_by_name
     if @search.blank?
-      Buyer.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Buyer.ordered_by_name.paginate(:page => params[:page])
     else
-      Buyer.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Buyer.filtered(@search).ordered_by_name.paginate(:page => params[:page])
     end
   end
 

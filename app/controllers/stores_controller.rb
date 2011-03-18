@@ -67,9 +67,9 @@ class StoresController < ApplicationController
 
   def ordered_by_name
     if @search.blank?
-      Store.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Store.ordered_by_name.paginate(:page => params[:page])
     else
-      Store.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Store.filtered(@search).ordered_by_name.paginate(:page => params[:page])
     end
   end
 

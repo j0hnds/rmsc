@@ -19,4 +19,7 @@ class Coordinator < ActiveRecord::Base
 
   scope :ordered_by_name, order("coordinators.last_name ASC, coordinators.first_name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "first_name LIKE :name_match OR last_name LIKE :name_match", :name_match => "%#{search}%" ]}}
+
+  @@per_page = 30
+
 end

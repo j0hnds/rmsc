@@ -67,9 +67,9 @@ class VenuesController < ApplicationController
 
   def ordered_by_name
     if @search.blank?
-      Venue.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Venue.ordered_by_name.paginate(:page => params[:page])
     else
-      Venue.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Venue.filtered(@search).ordered_by_name.paginate(:page => params[:page])
     end
   end
 

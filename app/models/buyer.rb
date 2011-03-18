@@ -13,4 +13,7 @@ class Buyer < ActiveRecord::Base
 
   scope :ordered_by_name, order("buyers.last_name ASC, buyers.first_name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "first_name LIKE :name OR last_name LIKE :name", :name => "%#{search}%" ]}}
+
+  @@per_page = 30
+
 end

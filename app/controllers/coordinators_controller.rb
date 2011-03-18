@@ -67,9 +67,9 @@ class CoordinatorsController < ApplicationController
 
   def ordered_by_name
     if @search.blank?
-      Coordinator.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Coordinator.ordered_by_name.paginate(:page => params[:page])
     else
-      Coordinator.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Coordinator.filtered(@search).ordered_by_name.paginate(:page => params[:page])
     end
   end
 

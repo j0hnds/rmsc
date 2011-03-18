@@ -71,9 +71,9 @@ class ExhibitorsController < ApplicationController
 
   def ordered_by_name
     if @search.blank?
-      Exhibitor.ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Exhibitor.ordered_by_name.paginate(:page => params[:page])
     else
-      Exhibitor.filtered(@search).ordered_by_name.paginate(:page => params[:page], :per_page => 5)
+      Exhibitor.filtered(@search).ordered_by_name.paginate(:page => params[:page])
     end
   end
 

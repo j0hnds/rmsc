@@ -15,4 +15,6 @@ class Store < ActiveRecord::Base
   scope :ordered_by_name, order("stores.name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "name LIKE ?", "%#{search}%" ]}}
 
+  @@per_page = 30
+
 end
