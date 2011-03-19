@@ -1,11 +1,15 @@
 class BuyersController < ApplicationController
+  include CrudSearches
+
+  crud_model Buyer
+  order_scope :ordered_by_name
 
   layout 'primary', :only => [ :index ]
 
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
-    @buyers = ordered_by_name
+    @buyers = ordered_results
   end
 
   def new
@@ -18,7 +22,7 @@ class BuyersController < ApplicationController
 
     if @buyer.valid?
       @buyer.save!
-      @buyers = ordered_by_name
+      @buyers = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -36,7 +40,7 @@ class BuyersController < ApplicationController
     @buyer = Buyer.find(params[:id])
 
     if @buyer.update_attributes(params[:buyer])
-      @buyers = ordered_by_name
+      @buyers = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -54,7 +58,7 @@ class BuyersController < ApplicationController
 
     @buyer.destroy
 
-    @buyers = ordered_by_name
+    @buyers = ordered_results
 
     render :action => :success and return if request.xhr?
 
@@ -62,17 +66,7 @@ class BuyersController < ApplicationController
   end
 
   def search
-    @buyers = ordered_by_name
-  end
-
-  private
-
-  def ordered_by_name
-    if @search.blank?
-      Buyer.ordered_by_name.paginate(:page => params[:page])
-    else
-      Buyer.filtered(@search).ordered_by_name.paginate(:page => params[:page])
-    end
+    @buyers = ordered_results
   end
 
 end

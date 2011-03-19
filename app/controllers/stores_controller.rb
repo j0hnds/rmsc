@@ -1,11 +1,15 @@
 class StoresController < ApplicationController
+  include CrudSearches
+
+  crud_model Store
+  order_scope :ordered_by_name
 
   layout 'primary', :only => [ :index ]
 
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
-    @stores = ordered_by_name
+    @stores = ordered_results
   end
 
   def new
@@ -17,7 +21,7 @@ class StoresController < ApplicationController
 
     if @store.valid?
       @store.save!
-      @stores = ordered_by_name
+      @stores = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -34,7 +38,7 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
 
     if @store.update_attributes(params[:store])
-      @stores = ordered_by_name
+      @stores = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -52,7 +56,7 @@ class StoresController < ApplicationController
 
     @store.destroy
 
-    @stores = ordered_by_name
+    @stores = ordered_results
 
     render :action => :success and return if request.xhr?
 
@@ -60,17 +64,7 @@ class StoresController < ApplicationController
   end
 
   def search
-    @stores = ordered_by_name
-  end
-
-  private
-
-  def ordered_by_name
-    if @search.blank?
-      Store.ordered_by_name.paginate(:page => params[:page])
-    else
-      Store.filtered(@search).ordered_by_name.paginate(:page => params[:page])
-    end
+    @stores = ordered_results
   end
 
 end

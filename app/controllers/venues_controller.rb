@@ -1,11 +1,15 @@
 class VenuesController < ApplicationController
+  include CrudSearches
+
+  crud_model Venue
+  order_scope :ordered_by_name
 
   layout 'primary', :only => [ :index ]
 
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
-    @venues = ordered_by_name
+    @venues = ordered_results
   end
 
   def new
@@ -17,7 +21,7 @@ class VenuesController < ApplicationController
 
     if @venue.valid?
       @venue.save!
-      @venues = ordered_by_name
+      @venues = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -34,7 +38,7 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
 
     if @venue.update_attributes(params[:venue])
-      @venues = ordered_by_name
+      @venues = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -52,7 +56,7 @@ class VenuesController < ApplicationController
 
     @venue.destroy
 
-    @venues = ordered_by_name
+    @venues = ordered_results
 
     render :action => :success and return if request.xhr?
 
@@ -60,18 +64,7 @@ class VenuesController < ApplicationController
   end
 
   def search
-    @venues = ordered_by_name
+    @venues = ordered_results
   end
-
-  private
-
-  def ordered_by_name
-    if @search.blank?
-      Venue.ordered_by_name.paginate(:page => params[:page])
-    else
-      Venue.filtered(@search).ordered_by_name.paginate(:page => params[:page])
-    end
-  end
-
 
 end

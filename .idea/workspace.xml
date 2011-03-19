@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c162c225-877b-4022-a42c-492dbc42e9db" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/show_exhibitor_wrapper.rb" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/crud_searches.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/buyers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/buyers_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" />
@@ -10,12 +10,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/shows_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/stores_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/stores_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/venues_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/venues_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/buyer.rb" afterPath="$PROJECT_DIR$/app/models/buyer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/coordinator.rb" afterPath="$PROJECT_DIR$/app/models/coordinator.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/exhibitor.rb" afterPath="$PROJECT_DIR$/app/models/exhibitor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/show.rb" afterPath="$PROJECT_DIR$/app/models/show.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/store.rb" afterPath="$PROJECT_DIR$/app/models/store.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/venue.rb" afterPath="$PROJECT_DIR$/app/models/venue.rb" />
     </list>
     <ignored path="rmsc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,64 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="coordinator.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/coordinator.rb">
+      <file leaf-file-name="crud_searches.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/crud_searches.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="896" selection-end="896" vertical-scroll-proportion="-13.333333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buyer.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/buyer.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="-9.444445">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="associate.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/associate.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="-8.333333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buyers_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="77" selection-start="1449" selection-end="1449" vertical-scroll-proportion="-23.925926">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coordinators_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/coordinators_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="83" selection-start="1537" selection-end="1537" vertical-scroll-proportion="-23.185184">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exhibitors_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/exhibitors_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="81" selection-start="1698" selection-end="1698" vertical-scroll-proportion="-22.703703">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show_context.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/show_context.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="16" selection-start="214" selection-end="214" vertical-scroll-proportion="-3.8888888">
+            <state line="30" column="27" selection-start="674" selection-end="674" vertical-scroll-proportion="-16.666666">
               <folding />
             </state>
           </provider>
@@ -105,7 +45,34 @@
       <file leaf-file-name="shows_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/shows_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="83" selection-start="1733" selection-end="1733" vertical-scroll-proportion="-23.185184">
+            <state line="79" column="11" selection-start="1581" selection-end="1581" vertical-scroll-proportion="-26.148148">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buyers_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="29" selection-start="1313" selection-end="1313" vertical-scroll-proportion="-24.481482">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coordinators_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/coordinators_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="3" selection-start="1406" selection-end="1406" vertical-scroll-proportion="-26.148148">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exhibitors_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/exhibitors_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="3" selection-start="1569" selection-end="1569" vertical-scroll-proportion="-40.555557">
               <folding />
             </state>
           </provider>
@@ -114,7 +81,7 @@
       <file leaf-file-name="stores_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="77" selection-start="1377" selection-end="1377" vertical-scroll-proportion="-23.185184">
+            <state line="69" column="3" selection-start="1252" selection-end="1252" vertical-scroll-proportion="-25.407408">
               <folding />
             </state>
           </provider>
@@ -123,7 +90,7 @@
       <file leaf-file-name="venues_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/venues_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="77" selection-start="1377" selection-end="1377" vertical-scroll-proportion="1.239604">
+            <state line="52" column="46" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.88316834">
               <folding />
             </state>
           </provider>
@@ -165,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/shows/_form.html.erb" />
         <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_head.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/buttons.css" />
@@ -175,10 +141,11 @@
         <option value="$PROJECT_DIR$/app/models/exhibitor.rb" />
         <option value="$PROJECT_DIR$/app/models/coordinator.rb" />
         <option value="$PROJECT_DIR$/app/models/buyer.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/crud_searches.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/buyers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/exhibitors_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/stores_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/venues_controller.rb" />
       </list>
@@ -210,10 +177,11 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="RailsProjectView">
         <subPane />
       </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,7 +252,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,16 +268,16 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="99" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1003" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1007" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1003" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="95" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="113" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="113" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -413,6 +380,13 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -441,13 +415,6 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -645,7 +612,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added date picker and worked on shows editing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the paging value to 30 for all controllers." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -682,16 +649,12 @@
     <MESSAGE value="Added line reordering method to line model." />
     <MESSAGE value="Adding dashboard information" />
     <MESSAGE value="Added date picker and worked on shows editing" />
+    <MESSAGE value="Changed the paging value to 30 for all controllers." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_head.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="38" selection-start="491" selection-end="491" vertical-scroll-proportion="0.20965692" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="126" selection-start="201" selection-end="201" vertical-scroll-proportion="0.05639098" />
@@ -699,98 +662,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/show.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="904" selection-end="922" vertical-scroll-proportion="-12.777778">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="904" selection-end="922" vertical-scroll-proportion="-12.777778" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/venue.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="-10.555555">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="-10.555555" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/store.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="-10.0">
-          <folding />
-        </state>
+        <state line="18" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="-10.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/exhibitor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1434" selection-end="1434" vertical-scroll-proportion="-12.222222">
-          <folding />
-        </state>
+        <state line="22" column="0" selection-start="1434" selection-end="1434" vertical-scroll-proportion="-12.222222" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/coordinator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="896" selection-end="896" vertical-scroll-proportion="-13.333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/buyer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="827" selection-end="827" vertical-scroll-proportion="-9.444445">
-          <folding />
-        </state>
+        <state line="24" column="0" selection-start="896" selection-end="896" vertical-scroll-proportion="-13.333333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/associate.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="-8.333333">
+        <state line="15" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="-8.333333" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/show_context.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="16" selection-start="214" selection-end="214" vertical-scroll-proportion="-3.8888888" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/buyer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="23" selection-start="826" selection-end="826" vertical-scroll-proportion="-8.888889" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/shows_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="11" selection-start="1581" selection-end="1581" vertical-scroll-proportion="-26.148148">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/crud_searches.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="27" selection-start="674" selection-end="674" vertical-scroll-proportion="-16.666666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="77" selection-start="1449" selection-end="1449" vertical-scroll-proportion="-23.925926">
+        <state line="68" column="29" selection-start="1313" selection-end="1313" vertical-scroll-proportion="-24.481482">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/coordinators_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="83" selection-start="1537" selection-end="1537" vertical-scroll-proportion="-23.185184">
+        <state line="69" column="3" selection-start="1406" selection-end="1406" vertical-scroll-proportion="-26.148148">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/exhibitors_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="81" selection-start="1698" selection-end="1698" vertical-scroll-proportion="-22.703703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/show_context.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="16" selection-start="214" selection-end="214" vertical-scroll-proportion="-3.8888888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/shows_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="83" selection-start="1733" selection-end="1733" vertical-scroll-proportion="-23.185184">
+        <state line="73" column="3" selection-start="1569" selection-end="1569" vertical-scroll-proportion="-40.555557">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="77" selection-start="1377" selection-end="1377" vertical-scroll-proportion="-23.185184">
+        <state line="69" column="3" selection-start="1252" selection-end="1252" vertical-scroll-proportion="-25.407408">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/venues_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="77" selection-start="1377" selection-end="1377" vertical-scroll-proportion="1.239604">
+        <state line="52" column="46" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.88316834">
           <folding />
         </state>
       </provider>

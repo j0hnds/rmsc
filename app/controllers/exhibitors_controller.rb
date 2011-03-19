@@ -1,11 +1,15 @@
 class ExhibitorsController < ApplicationController
+  include CrudSearches
+
+  crud_model Exhibitor
+  order_scope :ordered_by_name
 
   layout 'primary', :only => [ :index ]
 
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
   def index
-    @exhibitors = ordered_by_name
+    @exhibitors = ordered_results
   end
 
   def new
@@ -20,7 +24,7 @@ class ExhibitorsController < ApplicationController
 
       @exhibitor.register_for_show(@current_show, params[:lines], params[:associates]) if params[:attending_current_show] == 'yes'
 
-      @exhibitors = ordered_by_name
+      @exhibitors = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -38,7 +42,7 @@ class ExhibitorsController < ApplicationController
 
     if @exhibitor.update_attributes(params[:exhibitor])
       @exhibitor.shows << @current_show if params[:attending_current_show] == 'yes'
-      @exhibitors = ordered_by_name
+      @exhibitors = ordered_results
       render :action => :success and return if request.xhr?
     end
 
@@ -56,7 +60,7 @@ class ExhibitorsController < ApplicationController
 
     @exhibitor.destroy
 
-    @exhibitors = ordered_by_name
+    @exhibitors = ordered_results
 
     render :action => :success and return if request.xhr?
 
@@ -64,17 +68,7 @@ class ExhibitorsController < ApplicationController
   end
 
   def search
-    @exhibitors = ordered_by_name
-  end
-
-  private
-
-  def ordered_by_name
-    if @search.blank?
-      Exhibitor.ordered_by_name.paginate(:page => params[:page])
-    else
-      Exhibitor.filtered(@search).ordered_by_name.paginate(:page => params[:page])
-    end
+    @exhibitors = ordered_results
   end
 
 end
