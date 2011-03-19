@@ -1,12 +1,24 @@
+Factory.sequence :name do |n|
+  "Name#{n}"
+end
+
+Factory.sequence :line do |n|
+  "Line #{n}"
+end
+
+Factory.sequence :room do |n|
+  (n + 1).to_s
+end
+
 Factory.define :coordinator do |f|
-  f.first_name 'Joe'
-  f.last_name 'Smith'
+  f.first_name Factory.next :name
+  f.last_name Factory.next :name
   f.phone '303 333 3333'
   f.email 'joe.smith@email.com'
 end
 
 Factory.define :venue do |f|
-  f.name 'Venue'
+  f.name Factory.next :name
   f.address_1 '101 Main Street'
   f.city 'Santa Monica'
   f.state 'SD'
@@ -17,7 +29,7 @@ end
 
 # For create, must specify a venue and a coordinator
 Factory.define :show do |f|
-  f.name 'Show 1'
+  f.name Factory.next :name
   f.start_date Date.today
   f.end_date Date.today + 1.day
   f.next_start_date Date.today
@@ -25,8 +37,8 @@ Factory.define :show do |f|
 end
 
 Factory.define :exhibitor do |f|
-  f.first_name 'Joe'
-  f.last_name 'Exhibitor'
+  f.first_name Factory.next :name
+  f.last_name Factory.next :name
   f.address '123 Main St'
   f.city 'San Andreas'
   f.state 'GA'
@@ -38,7 +50,7 @@ Factory.define :exhibitor do |f|
 end
 
 Factory.define :store do |f|
-  f.name 'Shoe Store'
+  f.name Factory.next :name
   f.address '123 Main'
   f.city 'Aberdeen'
   f.state 'CT'
@@ -49,8 +61,8 @@ Factory.define :store do |f|
 end
 
 Factory.define :buyer do |f|
-  f.first_name 'Joe'
-  f.last_name 'Buyer'
+  f.first_name Factory.next :name
+  f.last_name Factory.next :name
   f.phone '303 333 3333'
   f.email 'joe.buyer@mail.com'
 end
@@ -60,15 +72,15 @@ Factory.define :registration do |f|
 end
 
 Factory.define :room do |f|
-  f.room '1201'
+  f.room Factory.next :room
 end
 
 Factory.define :associate do |f|
-  f.first_name 'Jim'
-  f.last_name 'Associate'
+  f.first_name Factory.next :name
+  f.last_name Factory.next :name
 end
 
 Factory.define :line do |f|
   f.order 1
-  f.line 'Line 1'
+  f.line Factory.next :line
 end

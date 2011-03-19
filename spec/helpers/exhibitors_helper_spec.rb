@@ -13,7 +13,7 @@ require 'spec_helper'
 describe ExhibitorsHelper do
 
   before(:each) do
-    @exhibitor = Factory.create(:exhibitor)
+    @exhibitor = Factory.create(:exhibitor, :first_name => 'Joe', :last_name => 'Exhibitor')
   end
 
   it "knows how to correctly format an exhibitor name" do

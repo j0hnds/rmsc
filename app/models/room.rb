@@ -8,6 +8,14 @@ class Room < ActiveRecord::Base
 
   scope :ordered_by_room, order('room ASC')
 
+  def associates_as_csv
+    associates.ordered_by_name.collect { | a | "#{a.first_name} #{a.last_name}"}.join(',')
+  end
+
+  def lines_as_csv
+    lines.ordered.collect(&:line).join(',')
+  end
+
   def assign_lines_from_csv(lines_csv)
     if !lines_csv.blank?
       line_list = lines_csv.split(/,/).collect { | line | line.strip }

@@ -13,7 +13,8 @@ require 'spec_helper'
 describe BuyersHelper do
 
   it "should format a buyer's name" do
-    buyer = Factory.build(:buyer)
+    buyer = Factory.build(:buyer, :first_name => 'Joe', :last_name => 'Buyer')
     helper.format_buyer_name(buyer).should == "Buyer, Joe"
   end
+
 end

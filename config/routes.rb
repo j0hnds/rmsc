@@ -24,8 +24,10 @@ Rmsc::Application.routes.draw do
     post :search, :on => :collection
   end
 
-  resources :venues do
-    post :search, :on => :collection
+  resources :registrations do
+    post :room, :on => :collection
+    post :lines, :on => :collection
+    post :associates, :on => :collection
   end
 
   resources :shows do
@@ -34,6 +36,10 @@ Rmsc::Application.routes.draw do
   end
 
   resources :stores do
+    post :search, :on => :collection
+  end
+
+  resources :venues do
     post :search, :on => :collection
   end
 
