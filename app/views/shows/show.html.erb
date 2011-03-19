@@ -11,6 +11,6 @@
 <form class="ajaxed" action="<%= show_path(@show) %>" method="POST">
   <%= hidden_field_tag :_method, "delete" %>
   <%= field_set_tag nil, :class => 'submit'  do -%>
-    <%= submit_tag 'Delete Show' %>
+    <%= submit_tag 'Delete Show' %>  <span>or <a class="cancel_form" href="#">Close</a></span>
   <% end %>
 </form>

@@ -33,6 +33,13 @@ $(function(){
 		}
 	});
 
+    /*
+        Implement the cancel link on crud forms
+     */
+    $('a.cancel_form').live('click', function(event){
+        $('div#record_manager').empty();
+    });
+
 	// Handle AJAX form posts
 	$('.ajaxed').livequery(function(){
 		$(this).submit(function(event){

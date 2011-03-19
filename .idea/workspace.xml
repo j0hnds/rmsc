@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c162c225-877b-4022-a42c-492dbc42e9db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/crud_searches.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/buyers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/buyers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exhibitors_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exhibitors_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/shows_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/stores_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/stores_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/venues_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/venues_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/buyers/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/buyers/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/buyers/show.html.erb" afterPath="$PROJECT_DIR$/app/views/buyers/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/coordinators/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/coordinators/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/coordinators/show.html.erb" afterPath="$PROJECT_DIR$/app/views/coordinators/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exhibitors/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/exhibitors/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exhibitors/show.html.erb" afterPath="$PROJECT_DIR$/app/views/exhibitors/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shows/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/shows/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shows/show.html.erb" afterPath="$PROJECT_DIR$/app/views/shows/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stores/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/stores/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stores/show.html.erb" afterPath="$PROJECT_DIR$/app/views/stores/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/venues/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/venues/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/venues/show.html.erb" afterPath="$PROJECT_DIR$/app/views/venues/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/application.js" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
     </list>
     <ignored path="rmsc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,71 +38,7 @@
     <favorites_list name="rmsc" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="crud_searches.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/crud_searches.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="27" selection-start="674" selection-end="674" vertical-scroll-proportion="-16.666666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shows_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/shows_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="11" selection-start="1581" selection-end="1581" vertical-scroll-proportion="-26.148148">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buyers_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="29" selection-start="1313" selection-end="1313" vertical-scroll-proportion="-24.481482">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coordinators_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/coordinators_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="3" selection-start="1406" selection-end="1406" vertical-scroll-proportion="-26.148148">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exhibitors_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/exhibitors_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="3" selection-start="1569" selection-end="1569" vertical-scroll-proportion="-40.555557">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stores_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="3" selection-start="1252" selection-end="1252" vertical-scroll-proportion="-25.407408">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="venues_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/venues_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="46" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.88316834">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -132,22 +74,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_head.html.erb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/buttons.css" />
-        <option value="$PROJECT_DIR$/app/models/show.rb" />
-        <option value="$PROJECT_DIR$/app/models/venue.rb" />
-        <option value="$PROJECT_DIR$/app/models/store.rb" />
-        <option value="$PROJECT_DIR$/app/models/exhibitor.rb" />
-        <option value="$PROJECT_DIR$/app/models/coordinator.rb" />
-        <option value="$PROJECT_DIR$/app/models/buyer.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/crud_searches.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/shows_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/buyers_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/coordinators_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/exhibitors_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/stores_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/venues_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/buyers/_form.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/views/buyers/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/coordinators/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/coordinators/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/exhibitors/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/exhibitors/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shows/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shows/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/stores/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/stores/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/venues/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/venues/show.html.erb" />
       </list>
     </option>
   </component>
@@ -213,6 +155,14 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="venues" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -228,7 +178,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exhibitors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coordinators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmsc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -579,11 +631,12 @@
     <frame x="18" y="22" width="1538" height="959" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298731" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298731" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295905" sideWeight="0.67012686" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295905" sideWeight="0.67012686" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32641292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -591,7 +644,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -612,7 +664,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the paging value to 30 for all controllers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a more DRY way of handling the searching/sorting for the crud screens." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -625,7 +677,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Added will_paginate to deal with lists" />
     <MESSAGE value="Moved to Idea 3" />
     <MESSAGE value="Merge branch 'development' of github.com:j0hnds/rmsc into development&#10;" />
     <MESSAGE value="Cleaned up the layout some more. Added table styling." />
@@ -650,101 +701,120 @@
     <MESSAGE value="Adding dashboard information" />
     <MESSAGE value="Added date picker and worked on shows editing" />
     <MESSAGE value="Changed the paging value to 30 for all controllers." />
+    <MESSAGE value="Created a more DRY way of handling the searching/sorting for the crud screens." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="126" selection-start="201" selection-end="201" vertical-scroll-proportion="0.05639098" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/show.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="904" selection-end="922" vertical-scroll-proportion="-12.777778" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/venue.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="-10.555555" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/store.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="-10.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/exhibitor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1434" selection-end="1434" vertical-scroll-proportion="-12.222222" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/coordinator.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="896" selection-end="896" vertical-scroll-proportion="-13.333333" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/associate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="32" selection-start="598" selection-end="598" vertical-scroll-proportion="-8.333333" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/show_context.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="16" selection-start="214" selection-end="214" vertical-scroll-proportion="-3.8888888" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/buyer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="826" selection-end="826" vertical-scroll-proportion="-8.888889" />
+        <state line="68" column="29" selection-start="1313" selection-end="1313" vertical-scroll-proportion="1.2590476">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/shows_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="11" selection-start="1581" selection-end="1581" vertical-scroll-proportion="-26.148148">
+        <state line="79" column="11" selection-start="1581" selection-end="1581" vertical-scroll-proportion="1.3447618">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/crud_searches.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="27" selection-start="674" selection-end="674" vertical-scroll-proportion="-16.666666">
+        <state line="30" column="27" selection-start="674" selection-end="674" vertical-scroll-proportion="0.87890625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/buyers_controller.rb">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="29" selection-start="1313" selection-end="1313" vertical-scroll-proportion="-24.481482">
+        <state line="39" column="19" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-17.222221">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/coordinators_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/buyers/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="3" selection-start="1406" selection-end="1406" vertical-scroll-proportion="-26.148148">
+        <state line="11" column="93" selection-start="625" selection-end="684" vertical-scroll-proportion="-3.235294">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/exhibitors_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/buyers/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="3" selection-start="1569" selection-end="1569" vertical-scroll-proportion="-40.555557">
+        <state line="12" column="84" selection-start="533" selection-end="533" vertical-scroll-proportion="-3.5294118">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/venues/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="3" selection-start="1252" selection-end="1252" vertical-scroll-proportion="-25.407408">
+        <state line="16" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.52060735">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/venues_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/venues/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="46" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.88316834">
+        <state line="15" column="94" selection-start="859" selection-end="859" vertical-scroll-proportion="0.48076922">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/stores/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="84" selection-start="559" selection-end="559" vertical-scroll-proportion="0.4054054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/stores/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="94" selection-start="800" selection-end="800" vertical-scroll-proportion="0.44871795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="83" selection-start="707" selection-end="707" vertical-scroll-proportion="0.4054054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shows/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="94" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.41666666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exhibitors/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="88" selection-start="675" selection-end="675" vertical-scroll-proportion="0.41916168">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exhibitors/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="98" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.76844263">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/coordinators/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="90" selection-start="512" selection-end="512" vertical-scroll-proportion="0.32934132">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/coordinators/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="100" selection-start="532" selection-end="532" vertical-scroll-proportion="0.2994012">
           <folding />
         </state>
       </provider>

@@ -11,6 +11,6 @@
 <form class="ajaxed" action="<%= venue_path(@venue) %>" method="POST">
   <%= hidden_field_tag :_method, "delete" %>
   <%= field_set_tag nil, :class => 'submit'  do -%>
-    <%= submit_tag 'Delete Venue' %>
+    <%= submit_tag 'Delete Venue' %>  <span>or <a class="cancel_form" href="#">Close</a></span>
   <% end %>
 </form>
