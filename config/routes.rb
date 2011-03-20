@@ -30,6 +30,8 @@ Rmsc::Application.routes.draw do
     post :associates, :on => :collection
     get :unregistered_exhibitors, :on => :collection
     post :register_exhibitors, :on => :collection
+    post :add_room, :on => :member
+    post :delete_room, :on => :member
   end
 
   resources :shows do

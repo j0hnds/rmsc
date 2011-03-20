@@ -4,12 +4,16 @@
   <col/>
   <col/>
   <col/>
+  <col/>
+  <col/>
   <thead>
     <tr>
       <th>Name</th>
       <th>Room</th>
       <th>Lines</th>
       <th>Associates</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -24,6 +28,17 @@
       <td>
         <%= form_tag registration_path(er), :method => 'delete' do %>
             <%= submit_tag "Unregister" %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag add_room_registration_path(er), :method => 'post' do %>
+            <%= submit_tag "Add Room" %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag delete_room_registration_path(er), :method => 'post' do %>
+            <%= hidden_field_tag :room_id, room.id %>
+            <%= submit_tag "Delete Room" %>
         <% end %>
       </td>
     </tr>

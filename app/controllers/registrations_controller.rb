@@ -68,4 +68,19 @@ class RegistrationsController < ApplicationController
     Registration.destroy(params[:id])
     redirect_to registrations_path
   end
+
+  def add_room
+    registration = Registration.find(params[:id])
+
+    registration.rooms << Room.new
+
+    redirect_to registrations_path
+  end
+
+  def delete_room
+    registration = Registration.find(params[:id])
+    Room.destroy(params[:room_id])
+
+    redirect_to registrations_path
+  end
 end
