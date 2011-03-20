@@ -1,8 +1,8 @@
 class Room < ActiveRecord::Base
 
   belongs_to :registration
-  has_many :associates
-  has_many :lines
+  has_many :associates, :dependent => :destroy
+  has_many :lines, :dependent => :destroy
 
   validates :registration_id, :presence => true
 

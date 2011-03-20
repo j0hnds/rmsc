@@ -3,12 +3,14 @@
   <col/>
   <col/>
   <col/>
+  <col/>
   <thead>
     <tr>
       <th>Name</th>
       <th>Room</th>
       <th>Lines</th>
       <th>Associates</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +21,11 @@
       <td><div id="<%= room.id %>" class="room_edit"><%= room.room %></div></td>
       <td><div id="<%= room.id %>" class="lines_edit"><%= room.lines_as_csv %></div></td>
       <td><div id="<%= room.id %>" class="associates_edit"><%= room.associates_as_csv %></div></td>
+      <td>
+        <%= form_tag registration_path(er), :method => 'delete' do %>
+            <%= submit_tag "Unregister" %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
   <% end %>

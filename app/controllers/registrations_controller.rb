@@ -63,4 +63,9 @@ class RegistrationsController < ApplicationController
     render :action => :success and return if request.xhr?
     render :index
   end
+
+  def destroy
+    Registration.destroy(params[:id])
+    redirect_to registrations_path
+  end
 end

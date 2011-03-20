@@ -2,7 +2,7 @@ class Registration < ActiveRecord::Base
 
   belongs_to :exhibitor
   belongs_to :show
-  has_many :rooms
+  has_many :rooms, :dependent => :destroy
   has_many :associates, :through => :rooms
   has_many :lines, :through => :rooms
 
