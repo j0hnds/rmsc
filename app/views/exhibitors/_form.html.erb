@@ -12,9 +12,14 @@
     <li><%= form_label_field f, :cell %></li>
     <li><%= form_label_field f, :email %></li>
     <% if @exhibitor.eligible_for_show_registration?(@current_show) %>
-    <li><%= hidden_field_tag :attending_current_show, "no" %><%= f.label :attending_current_show %><%= check_box_tag :attending_current_show, 'yes' %></li>
-    <li><%= label_tag :lines %><%= text_field_tag :lines %></li>
-    <li><%= label_tag :associates %><%= text_field_tag :associates %></li>
+        <%
+           prior_registration = @exhibitor.prior_registration(@current_show)
+           prior_lines = (prior_registration) ? prior_registration.lines.ordered.collect(&:line).join(',') : ''
+           prior_associates = (prior_registration) ? prior_registration.associates.ordered_by_name.collect { |a| "#{a.first_name} #{a.last_name}" }.join(',') : ''
+        %>
+        <li><%= hidden_field_tag :attending_current_show, "no" %><%= f.label :attending_current_show %><%= check_box_tag :attending_current_show, 'yes' %></li>
+        <li><%= label_tag :lines %><%= text_area_tag :lines, prior_lines, :size => "40x4" %></li>
+        <li><%= label_tag :associates %><%= text_area_tag :associates, prior_associates, :size => "40x4" %></li>
     <% else %>
         <% if @exhibitor.registered_for_show?(@current_show) %>
         <li>Registered for show: <%= @current_show.name %></li>

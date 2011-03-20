@@ -33,42 +33,8 @@ class Exhibitor < ActiveRecord::Base
     self.persisted? && self.shows.include?(show)
   end
 
-#  def register_for_show(show, lines, associates)
-#    prior_registration = self.registrations.latest
-#
-#    # Create the registration
-#    registration = Registration.create(:show => show, :exhibitor => self)
-#
-#    if prior_registration
-#      # Loop through all the rooms in the prior registration
-#      prior_registration.rooms.each do |room|
-#        new_room = Room.new(:room => room.room)
-#        registration.rooms << new_room
-#        # For each line assigned to the room
-#        room.lines do | line |
-#          new_room.lines << Line.new(:order => line.order, :line => line.line)
-#        end
-#        # For each associate assigned to the room
-#        room.associates do | associate |
-#          new_room.associates << Associate.new(:first_name => associate.first_name, :last_name => associate.last_name)
-#        end
-#      end
-#    else
-#      room = Room.new
-#      registration.rooms << room
-#      if !lines.blank?
-#        line_list = lines.split(/,/).collect { | line | line.strip }
-#        line_list.each_with_index do | line, idx |
-#          room.lines << Line.new(:line => line, :order => idx)
-#        end
-#      end
-#      if !associates.blank?
-#        associate_list = associates.split(/,/).collect { | associate | associate.strip }
-#        associate_list.each do | associate_name |
-#          room.associates << Associate.create(associate_name)
-#        end
-#      end
-#    end
-#  end
+  def prior_registration(show)
+    Registration.joins(:show).where("exhibitor_id = ? AND registrations.show_id != ?", id, show.id).order('start_date DESC').first
+  end
 
 end
