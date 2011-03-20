@@ -6,31 +6,18 @@
 
 <h1>Exhibitor Registrations</h1>
 
+<div class="button_wrapper">
+  <p><%= link_to 'Register Exhibitor', unregistered_exhibitors_registrations_path, :class => 'insert button'-%></p>
+</div>
+
+
 <%# Show the current show registrations %>
-<table class="data">
-  <col/>
-  <col/>
-  <col/>
-  <col/>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Room</th>
-      <th>Lines</th>
-      <th>Associates</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @exhibitor_registrations.each_with_index do | er, index | %>
-    <% er.rooms.each_with_index do | room, room_index | %>
-    <tr>
-      <td><%= (room_index > 0) ? "&nbsp;".html_safe : format_exhibitor_name(er.exhibitor) %></td>
-      <td><div id="<%= room.id %>" class="room_edit"><%= room.room %></div></td>
-      <td><div id="<%= room.id %>" class="lines_edit"><%= room.lines_as_csv %></div></td>
-      <td><div id="<%= room.id %>" class="associates_edit"><%= room.associates_as_csv %></div></td>
-    </tr>
+<div id="show_registration_list">
+    <% if @exhibitor_registrations.empty? %>
+    <p>No exhibitors registered for show.</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
     <% end %>
-  <% end %>
-  </tbody>
-</table>
+</div>
+
 

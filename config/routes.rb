@@ -28,6 +28,8 @@ Rmsc::Application.routes.draw do
     post :room, :on => :collection
     post :lines, :on => :collection
     post :associates, :on => :collection
+    get :unregistered_exhibitors, :on => :collection
+    post :register_exhibitors, :on => :collection
   end
 
   resources :shows do

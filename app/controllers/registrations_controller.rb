@@ -46,4 +46,21 @@ class RegistrationsController < ApplicationController
 
     render :text => new_associates
   end
+
+  def unregistered_exhibitors
+    @unregistered_exhibitors = Exhibitor.not_in_show(@current_show).ordered_by_name
+  end
+
+  def register_exhibitors
+    # We will get the list of selected exhibitors to register
+    exhibitors = Exhibitor.find(params[:exhibitors])
+
+    exhibitors.each do | e |
+      @current_show.register_exhibitor(e)
+    end
+
+    @exhibitor_registrations = @current_show.registrations.joins(:exhibitor).order("last_name ASC, first_name ASC")
+    render :action => :success and return if request.xhr?
+    render :index
+  end
 end

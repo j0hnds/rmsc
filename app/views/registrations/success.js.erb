@@ -1,0 +1,9 @@
+$('#record_manager')
+    .fadeOut('fast', function() {
+        $(this).empty();
+	$('#show_registration_list')
+	    .css('display', 'none')
+	    .html("<%= escape_javascript(render(:partial => 'list')) -%>")
+	    .fadeIn('fast');
+    });
+

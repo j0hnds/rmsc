@@ -18,6 +18,7 @@ class Exhibitor < ActiveRecord::Base
 
   scope :ordered_by_name, order("exhibitors.last_name ASC, exhibitors.first_name ASC")
   scope :filtered, lambda { | search | { :conditions => [ "first_name LIKE :name_match OR last_name LIKE :name_match", :name_match => "%#{search}%" ]}}
+  scope :not_in_show, lambda { | show | { :conditions => [ "id not in (select exhibitor_id from registrations where show_id = ?)", show.id ]}}
 
   @@per_page = 30
 

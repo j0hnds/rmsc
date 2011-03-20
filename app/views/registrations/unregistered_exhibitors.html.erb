@@ -1,0 +1,7 @@
+<h1>Unregistered Exhibitors</h1>
+<%= form_tag register_exhibitors_registrations_path, :method => 'post', :class => 'ajaxed' do %>
+    <%= select_tag 'exhibitors[]', options_for_select(exhibitor_options(@unregistered_exhibitors)), :multiple => 'multiple', :size => 20 %>
+    <%= field_set_tag nil, :class => 'submit'  do -%>
+      <%= submit_tag 'Register Exhibitors' %>  <span>or <a class="cancel_form" href="#">Cancel</a></span>
+    <% end %>
+<% end %>

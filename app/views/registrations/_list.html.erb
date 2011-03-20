@@ -1,0 +1,26 @@
+<table class="data">
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Room</th>
+      <th>Lines</th>
+      <th>Associates</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @exhibitor_registrations.each_with_index do | er, index | %>
+    <% er.rooms.each_with_index do | room, room_index | %>
+    <tr>
+      <td><%= (room_index > 0) ? "&nbsp;".html_safe : format_exhibitor_name(er.exhibitor) %></td>
+      <td><div id="<%= room.id %>" class="room_edit"><%= room.room %></div></td>
+      <td><div id="<%= room.id %>" class="lines_edit"><%= room.lines_as_csv %></div></td>
+      <td><div id="<%= room.id %>" class="associates_edit"><%= room.associates_as_csv %></div></td>
+    </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>

@@ -1,5 +1,8 @@
 module RegistrationsHelper
 
+  def exhibitor_options(exhibitors)
+    exhibitors.collect { |e| ["#{e.last_name}, #{e.first_name}", e.id] }
+  end
 #  def format_lines(lines)
 #    lines.collect { |l| l.line }.join(", ")
 #  end
