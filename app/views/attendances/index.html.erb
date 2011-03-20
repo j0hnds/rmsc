@@ -1,0 +1,22 @@
+<% content_for :title, 'Buyer Attendance' %>
+<% content_for :bottom_load_js do -%>
+   <%= javascript_include_tag "attendances" -%>
+<% end %>
+
+<h1>Buyer Attendance</h1>
+
+<div class="button_wrapper">
+  <p><%= link_to 'Register Buyer', non_attending_buyers_attendances_path, :class => 'insert button'-%></p>
+</div>
+
+
+<%# Show the current show attendances %>
+<div id="show_attendance_list">
+    <% if @buyer_attendances.empty? %>
+    <p>No buyers attended show.</p>
+    <% else %>
+      <%= render :partial => 'list' -%>
+    <% end %>
+</div>
+
+
