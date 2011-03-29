@@ -19,6 +19,8 @@ Rmsc::Application.routes.draw do
     post :register_buyers, :on => :collection
   end
 
+  resources :booklets 
+
   resources :buyers do
     post :search, :on => :collection
   end
