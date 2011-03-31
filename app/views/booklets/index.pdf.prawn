@@ -94,7 +94,7 @@ pdf.text("#{@current_show.next_start_date.strftime("%B %d")} & #{@current_show.n
          :align => :center)
 pdf.move_down 30
 
-pdf.text("Show Coordinator: #{@current_show.coordinator}", 
+pdf.text("Show Coordinator: #{coordinator_name(@current_show.coordinator)}", 
          :size =>16, 
          :align => :center)
 pdf.text("Phone: #{@current_show.coordinator.phone}", 
@@ -104,14 +104,6 @@ pdf.text("#{@current_show.coordinator.email}",
          :size => 16, 
          :align => :center)
     
-# Do the exhibitor name cards
-# names = []
-# 20.times do | idx |
-#   names << "FirstName LastName"
-# end
-
-# lines = "Line One, Line Two, Line Three, Line Four, Line Five"
-
 @exhibitors.each_slice(6) do | page_worth |
   pdf.start_new_page
 
@@ -125,23 +117,24 @@ pdf.text("#{@current_show.coordinator.email}",
     row = (idx < 2) ? 0 : (idx < 4) ? 1 : 2
     b = pdf.grid(row, col)
     pdf.bounding_box b.top_left, :width => b.width, :height => b.height do
-      pdf.text("#{exhibitor_name(exhibitor)}\n#{exhibitor_rooms(exhibitor)}", 
-               :size => 16)
+      pdf.text("#{exhibitor_name(exhibitor)}\n#{exhibitor_rooms(@exhibitor_rooms[exhibitor.id])}", 
+               :size => 15,
+               :style => :bold)
       pdf.text("#{exhibitor_address(exhibitor)}\n", 
-               :size => 16)
+               :size => 15)
       pdf.text("Phone: #{exhibitor.phone}\n", 
-               :size => 16) unless exhibitor.phone.blank?
+               :size => 15) unless exhibitor.phone.blank?
       pdf.text("Fax: #{exhibitor.fax}\n", 
-               :size => 16) unless exhibitor.fax.blank?
+               :size => 15) unless exhibitor.fax.blank?
       pdf.text("Cell: #{exhibitor.cell}\n", 
-               :size => 16) unless exhibitor.cell.blank?
+               :size => 15) unless exhibitor.cell.blank?
       pdf.text("Email: #{exhibitor.email}\n", 
-               :size => 16) unless exhibitor.email.blank?
+               :size => 15) unless exhibitor.email.blank?
       pdf.text("Lines:", 
-               :size => 16,
+               :size => 15,
                :style => :bold)
       pdf.text(@exhibitor_lines[exhibitor.id].join(', '), 
-               :size => 16, 
+               :size => 14, 
                :style => :bold)
     end
   end
@@ -156,6 +149,7 @@ header = %w{ LINES ROOM EXHIBITOR }
     
 pdf.table(@show_lines, 
           :headers => header, 
+          :header_color => 'cccccc',
           :align_headers => :left,
           :column_widths => { 
             0 => pdf.bounds.width * 0.5,
@@ -165,11 +159,11 @@ pdf.table(@show_lines,
             0 => :left,
             1 => :left,
             2 => :left },
-          :row_colors => [ 'cccccc', 'aaaaaa' ],
+          :row_colors => [ 'ffffff', 'eeeeee' ],
           :font_size => 15,
           :border_style => :underline_header,
           :width => pdf.bounds.width) do
-  row(0).style(:style => :bold)
+  # row(0).style(:font_style => :bold)
 end
 
 # Now, do the thank you page

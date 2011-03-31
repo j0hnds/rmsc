@@ -3,12 +3,14 @@ class BookletsController < ApplicationController
 
   def index
     @show_exhibitor_count = @current_show.exhibitors.count
-    @show_line_count = Line.joins(:room => :registration).where('show_id = ?', @current_show.id).count
+    @show_line_count = Line.joins(:room => :registration).where('show_id = ?', @current_show.id).collect(&:line).uniq.count
 
     @exhibitors = @current_show.exhibitors
     @exhibitor_lines = {}
+    @exhibitor_rooms = {}
     @exhibitors.each do | e | 
       @exhibitor_lines[e.id] = Line.for_exhibitor(@current_show, e).collect(&:line) 
+      @exhibitor_rooms[e.id] = Room.for_exhibitor(@current_show, e)
     end
 
     @show_lines = Line.for_show(@current_show).collect do | line |

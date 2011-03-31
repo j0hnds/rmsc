@@ -8,15 +8,15 @@ module BookletsHelper
     "#{exhibitor.first_name} #{exhibitor.last_name}"
   end
 
-  def exhibitor_rooms(exhibitor)
+  def exhibitor_rooms(rooms)
     room_label = "Room"
-    room_label.pluralize if exhibitor.rooms.count > 1
+    room_label = room_label.pluralize if rooms.count > 1
 
-    "#{room_label}: #{exhibitor.rooms.collect(&:room).join(', ')}"
+    "#{room_label}: #{rooms.collect(&:room).join(', ')}"
   end
 
   def exhibitor_address(exhibitor)
-    "#{exhibitor.address}\n#{exhibitor.city}, #{exhibitor.state} #{exhibitor.postal_code}"
+    "#{exhibitor.address}\n#{exhibitor.city}, #{exhibitor.state}  #{exhibitor.postal_code}"
   end
 
   def exhibitor_lines(exhibitor)
@@ -24,9 +24,6 @@ module BookletsHelper
   end
 
   def venue_address(venue)
-    <<-ADDRESS
-#{venue.address_1}
-#{venue.city}, #{venue.state}  #{venue.postal_code}
-ADDRESS
+    "#{venue.address_1}\n#{venue.city}, #{venue.state}  #{venue.postal_code}"
   end
 end

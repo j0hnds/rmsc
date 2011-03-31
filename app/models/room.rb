@@ -7,6 +7,7 @@ class Room < ActiveRecord::Base
   validates :registration_id, :presence => true
 
   scope :ordered_by_room, order('room ASC')
+  scope :for_exhibitor, lambda { | show, exhibitor | joins(:registration).where('show_id = ? AND exhibitor_id = ?', show.id, exhibitor.id ).order('room ASC') }
 
   def associates_as_csv
     associates.ordered_by_name.collect { | a | "#{a.first_name} #{a.last_name}"}.join(',')
