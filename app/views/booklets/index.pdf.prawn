@@ -19,7 +19,7 @@ pdf.text('Denver Market',
          :style => :bold, 
          :align => :center)
 pdf.move_down 36
-pdf.text(@current_show.start_date.strftime('%B %d, %Y'), 
+pdf.text("#{@current_show.start_date.strftime('%B %d')}-#{@current_show.end_date.strftime('%d, %Y')}", 
          :size => 18, 
          :style => :bold, 
          :align => :center)
@@ -31,17 +31,22 @@ pdf.text(@current_show.venue.address_1,
          :size => 18, 
          :style => :bold, 
          :align => :center)
+pdf.text("#{@current_show.venue.city}, #{@current_show.venue.state} #{@current_show.venue.postal_code}", 
+         :size => 18, 
+         :style => :bold, 
+         :align => :center)
 pdf.move_down 36
 
 pdf.table([['Saturday', '9am to 5pm'],
            ['Sunday', '9am to 5pm']], 
+          :font_size => 16,
           :position => :center, 
           :border_width => 0)
 
 pdf.move_down 18
 
 pdf.text('Friday & Monday - by Appointment only', 
-         :size => 15, 
+         :size => 16, 
          :align => :center)
 
 # The welcome page
@@ -88,7 +93,7 @@ pdf.text("NEXT SHOE MARKET",
          :size => 26, 
          :style => :bold, 
          :align => :center)
-pdf.text("#{@current_show.next_start_date.strftime("%B %d")} & #{@current_show.next_end_date.strftime("%d, %Y")}", 
+pdf.text("#{@current_show.next_start_date.strftime("%B %d")} and #{@current_show.next_end_date.strftime("%d, %Y")}", 
          :size => 26, 
          :style => :bold, 
          :align => :center)
