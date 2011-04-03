@@ -8,8 +8,28 @@ class BuyersController < ApplicationController
 
   before_filter :get_search_term, :only => [ :index, :create, :update, :destroy, :search ]
 
+  prawnto :prawn => { :page_layout => :landscape }
+
   def index
-    @buyers = ordered_results
+
+    respond_to do | format |
+      format.pdf {
+        @buyer_list = Buyer.master_list.collect do | buyer |
+          [
+              "#{buyer.first_name} #{buyer.last_name}",
+              safe_string(buyer.store.name),
+              safe_string(buyer.store.address),
+              safe_string(buyer.store.city),
+              safe_string(buyer.store.state),
+              safe_string(buyer.store.postal_code)
+          ]
+        end
+        render :layout => false
+      }
+      format.html {
+        @buyers = ordered_results
+      }
+    end
   end
 
   def new
@@ -67,6 +87,12 @@ class BuyersController < ApplicationController
 
   def search
     @buyers = ordered_results
+  end
+
+  private
+
+  def safe_string(str)
+    (str) ? str : ''
   end
 
 end
