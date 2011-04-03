@@ -2,8 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-gem 'prawn', :submodules => true
-gem 'prawnto'
+gem 'prawn' #, :submodules => true
+# gem 'prawnto'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

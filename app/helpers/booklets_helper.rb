@@ -12,7 +12,7 @@ module BookletsHelper
     room_label = "Room"
     room_label = room_label.pluralize if rooms.count > 1
 
-    "#{room_label}: #{rooms.collect(&:room).join(', ')}"
+    "#{room_label}: #{rooms.collect { |r| "##{r.room}" }.join(', ')}"
   end
 
   def exhibitor_address(exhibitor)

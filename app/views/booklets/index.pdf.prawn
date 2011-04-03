@@ -1,4 +1,3 @@
-require 'prawn/layout'
 # Do the title page
 
 # put an image on the page
@@ -39,9 +38,15 @@ pdf.move_down 36
 
 pdf.table([['Saturday', '9am to 5pm'],
            ['Sunday', '9am to 5pm']], 
-          :font_size => 16,
-          :position => :center, 
-          :border_width => 0)
+          { :column_widths => { 
+              0 => pdf.bounds.width * 0.5,
+              1 => pdf.bounds.width * 0.5 },
+            :cell_style => { :size => 16, 
+              :borders => [], 
+              :padding => 3 }
+          } ) do
+  columns(0).align = :right
+end
 
 pdf.move_down 18
 
@@ -52,9 +57,9 @@ pdf.text('Friday & Monday - by Appointment only',
 # The welcome page
 pdf.start_new_page
 
-pdf.text('Welcome to the Market', 
+pdf.text('<u><b>Welcome to the Market</b></u>',
          :size => 20, 
-         :style => :bold, 
+         :inline_format => true,
          :align => :center)
 pdf.move_down 20
 
@@ -67,9 +72,9 @@ pdf.text("We have over #{@show_exhibitor_count} Reps, marketing over #{(@show_li
          :size => 16)
 pdf.move_down 40
 
-pdf.text('Lunch', 
+pdf.text('<u><b>Lunch</b></u>',
          :size => 16, 
-         :style => :bold, 
+         :inline_format => true,
          :align => :center)
 pdf.move_down 20
 
@@ -108,39 +113,68 @@ pdf.text("Phone: #{@current_show.coordinator.phone}",
 pdf.text("#{@current_show.coordinator.email}", 
          :size => 16, 
          :align => :center)
-    
-@exhibitors.each_slice(6) do | page_worth |
-  pdf.start_new_page
 
-  pdf.define_grid(:columns => 2, 
-                  :rows => 3, 
-                  :column_gutter => 12, 
-                  :row_gutter => 10)
+cell_width = (pdf.bounds.width / 2) - 6
+cell_height = (pdf.bounds.height / 4) - 12
+
+card_font_size = 12
+
+Rails.logger.error "## Cell width = #{cell_width}, Cell height = #{cell_height}"
+
+@exhibitors.each_slice(8) do | page_worth |
+  pdf.start_new_page
 
   page_worth.each_with_index do | exhibitor, idx |
     col = idx % 2
     row = (idx < 2) ? 0 : (idx < 4) ? 1 : 2
-    b = pdf.grid(row, col)
-    pdf.bounding_box b.top_left, :width => b.width, :height => b.height do
+    the_grid = [
+                # Row 0
+                pdf.bounds.top_left, 
+                [ pdf.bounds.right - cell_width,
+                  pdf.bounds.top ],
+
+                # Row 1
+                [ pdf.bounds.left,
+                  (pdf.bounds.top - cell_height) - 10 ],
+                [ pdf.bounds.right - cell_width,
+                  (pdf.bounds.top - cell_height) - 10 ],
+
+                # Row 2
+                [ pdf.bounds.left,
+                  (pdf.bounds.top - (2 * cell_height)) - 20 ],
+                [ pdf.bounds.right - cell_width,
+                  (pdf.bounds.top - (2 * cell_height)) - 20 ],
+
+                # Row 3
+                [ pdf.bounds.left,
+                  (pdf.bounds.top - (3 * cell_height)) - 30 ],
+                [ pdf.bounds.right - cell_width,
+                  (pdf.bounds.top - (3 * cell_height)) - 30 ]
+               ]
+    
+    pdf.bounding_box(the_grid[idx], 
+                     :width => cell_width, 
+                     :height => cell_height) do
       pdf.text("#{exhibitor_name(exhibitor)}\n#{exhibitor_rooms(@exhibitor_rooms[exhibitor.id])}", 
-               :size => 15,
+               :size => card_font_size,
                :style => :bold)
       pdf.text("#{exhibitor_address(exhibitor)}\n", 
-               :size => 15)
-      pdf.text("Phone: #{exhibitor.phone}\n", 
-               :size => 15) unless exhibitor.phone.blank?
-      pdf.text("Fax: #{exhibitor.fax}\n", 
-               :size => 15) unless exhibitor.fax.blank?
-      pdf.text("Cell: #{exhibitor.cell}\n", 
-               :size => 15) unless exhibitor.cell.blank?
-      pdf.text("Email: #{exhibitor.email}\n", 
-               :size => 15) unless exhibitor.email.blank?
-      pdf.text("Lines:", 
-               :size => 15,
-               :style => :bold)
-      pdf.text(@exhibitor_lines[exhibitor.id].join(', '), 
-               :size => 14, 
-               :style => :bold)
+               :size => card_font_size)
+      pdf.text("<b>Phone:</b> #{exhibitor.phone}\n", 
+               :size => card_font_size, 
+               :inline_format => true) unless exhibitor.phone.blank?
+      pdf.text("<b>Fax:</b> #{exhibitor.fax}\n", 
+               :size => card_font_size, 
+               :inline_format => true) unless exhibitor.fax.blank?
+      pdf.text("<b>Cell:</b> #{exhibitor.cell}\n", 
+               :size => card_font_size, 
+               :inline_format => true) unless exhibitor.cell.blank?
+      pdf.text("<b>Email:</b> #{exhibitor.email}\n", 
+               :size => card_font_size, 
+               :inline_format => true) unless exhibitor.email.blank?
+      pdf.text("<b>Lines:</b> #{@exhibitor_lines[exhibitor.id].join(', ')}",
+               :size => card_font_size,
+               :inline_format => true)
     end
   end
 end
@@ -150,25 +184,16 @@ pdf.start_new_page
 
 header = %w{ LINES ROOM EXHIBITOR }
 
-# data = [ 'Line One', '1001', 'John Doe' ]
-    
-pdf.table(@show_lines, 
-          :headers => header, 
-          :header_color => 'cccccc',
-          :align_headers => :left,
-          :column_widths => { 
+pdf.table([header] + @show_lines, 
+          :header => true, 
+          :column_widths => {
             0 => pdf.bounds.width * 0.5,
             1 => pdf.bounds.width * 0.15,
             2 => pdf.bounds.width * 0.35 },
-          :align => {
-            0 => :left,
-            1 => :left,
-            2 => :left },
           :row_colors => [ 'ffffff', 'eeeeee' ],
-          :font_size => 15,
-          :border_style => :underline_header,
+          :cell_style => { :size => 12 },
           :width => pdf.bounds.width) do
-  # row(0).style(:font_style => :bold)
+  row(0).style(:style => :bold, :background_color => 'cccccc')
 end
 
 # Now, do the thank you page
@@ -197,8 +222,7 @@ pdf.text("THANK YOU",
          :align => :center)
 pdf.move_down 20
 pdf.text('FOR COMING TO THE SHOW', 
-         :size => 20, 
-         :style => :bold, 
+         :size => 20,
          :align => :center)
 pdf.move_down 100
 
@@ -207,7 +231,7 @@ pdf.text('NEXT MARKET',
          :align => :center)
 pdf.move_down 20
 
-pdf.text("#{@current_show.next_start_date.strftime("%B %d")} & #{@current_show.next_end_date.strftime("%d, %Y")}", 
+pdf.text("#{@current_show.next_start_date.strftime("%B %d")} and #{@current_show.next_end_date.strftime("%d, %Y")}",
          :size => 20,
          :align => :center)
 pdf.move_down 100
