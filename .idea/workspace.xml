@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c162c225-877b-4022-a42c-492dbc42e9db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/scripts/legacy_convert" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/db_backup.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/db_backup.rake" afterPath="$PROJECT_DIR$/lib/tasks/db_backup.rake" />
     </list>
     <ignored path="rmsc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="db_backup.rake" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/db_backup.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="4" selection-start="86" selection-end="86" vertical-scroll-proportion="0.22857143">
+            <state line="46" column="10" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.8261719">
               <folding />
             </state>
           </provider>
@@ -88,8 +86,8 @@
         <option value="$PROJECT_DIR$/app/controllers/buyers_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/buyers/index.pdf.prawn" />
         <option value="$PROJECT_DIR$/lib/tasks/db_backup.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/db_backup.rake" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/lib/tasks/db_backup.rake" />
       </list>
     </option>
   </component>
@@ -522,6 +520,7 @@
     <frame x="19" y="22" width="1538" height="959" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298731" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298731" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -534,7 +533,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756633" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -555,7 +553,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the buyer master list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database backup task" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -568,7 +566,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Implementation of buyer crud screens." />
     <MESSAGE value="Added phone contact information to the venue model" />
     <MESSAGE value="Added exhibitor registration with rooms, lines and associates." />
     <MESSAGE value="Added buyer/show attendance relationship" />
@@ -593,6 +590,7 @@
     <MESSAGE value="Added the ability to indicate the buyers that attended a show." />
     <MESSAGE value="Reworked the booklet pdf so that it looks as close as possible to the original booklet." />
     <MESSAGE value="Added the buyer master list" />
+    <MESSAGE value="Added database backup task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -658,13 +656,6 @@
         <state line="4" column="70" selection-start="157" selection-end="157" vertical-scroll-proportion="0.114285715" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/db_backup.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="713" selection-end="713" vertical-scroll-proportion="0.64453125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/scripts/legacy_convert.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="449" column="17" selection-start="9035" selection-end="9046" vertical-scroll-proportion="0.6738281">
@@ -681,7 +672,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="86" selection-end="86" vertical-scroll-proportion="0.22857143">
+        <state line="9" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.25714287">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/db_backup.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="10" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.8261719">
           <folding />
         </state>
       </provider>

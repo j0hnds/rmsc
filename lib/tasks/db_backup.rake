@@ -41,4 +41,26 @@ namespace :db do
 
     puts "Deleted #{unwanted_backups.length} backups, #{all_backups.length - unwanted_backups.length} backups available"
   end
+
+  desc "Refresh the specified database from the latest backup"
+  task :refresh => ['db:drop', 'db:create', :environment] do
+    db_config = ActiveRecord::Base.configurations[RAILS_ENV]
+
+    backup_dir = Dir.new(File.join('db', 'backup'))
+
+    # Get the latest backup file
+    latest_backup_file = backup_dir.entries.sort.reverse.first
+    if latest_backup_file
+      puts "### The selected backup file is: #{latest_backup_file}"
+      lbf_full_path = File.join(backup_dir, latest_backup_file)
+      lbf_full_path_no_ext = lbf_full_path[0..-4]
+      sh "gunzip #{lbf_full_path}" # Unzip the backup
+      pass = ''
+      pass = "'-p#{db_config['password']}'" if db_config['password']
+      sh "mysql -u #{db_config['username']} #{pass} #{db_config['database']} < #{lbf_full_path_no_ext}"
+      sh "gzip #{lbf_full_path_no_ext}" # Rezip the backup
+    else
+      puts "### No backup available"
+    end
+  end
 end
