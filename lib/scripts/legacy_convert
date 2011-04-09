@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Shell wrapper for rails runner legacy convert script
+#
+SCRIPT_DIR=$(dirname $0)
+SCRIPT_NAME=$(basename $0)
+
+RUBY_SCRIPT=${SCRIPT_DIR}/${SCRIPT_NAME}.rb
+
+rails runner $RUBY_SCRIPT
