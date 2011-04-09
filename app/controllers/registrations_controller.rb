@@ -1,9 +1,19 @@
 class RegistrationsController < ApplicationController
+  include BookletsHelper
 
   layout 'primary', :only => [ :index ]
 
   def index
-    @exhibitor_registrations = @current_show.registrations.joins(:exhibitor).order("last_name ASC, first_name ASC")
+    respond_to do | format |
+      format.pdf {
+        @show_lines = Line.for_show(@current_show).collect do | line |
+          [ line.line, exhibitor_name(line.room.registration.exhibitor), select_exhibitor_phone(line.room.registration.exhibitor) ]
+        end
+      }
+      format.html {
+        @exhibitor_registrations = @current_show.registrations.joins(:exhibitor).order("last_name ASC, first_name ASC")
+      }
+    end
   end
 
   def room
@@ -82,5 +92,13 @@ class RegistrationsController < ApplicationController
     Room.destroy(params[:room_id])
 
     redirect_to registrations_path
+  end
+
+  private
+
+  def select_exhibitor_phone(exhibitor)
+    phone = exhibitor.phone
+    phone ||= exhibitor.cell
+    phone
   end
 end
