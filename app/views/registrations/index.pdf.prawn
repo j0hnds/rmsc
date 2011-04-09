@@ -7,7 +7,7 @@ pdf.table([header] + @show_lines,
             1 => pdf.bounds.width * 0.30,
             2 => pdf.bounds.width * 0.20 },
           :row_colors => [ 'ffffff', 'eeeeee' ],
-          :cell_style => { :size => 12 },
+          :cell_style => { :size => 10 },
           :width => pdf.bounds.width) do
   row(0).style(:style => :bold, :background_color => 'cccccc')
 end

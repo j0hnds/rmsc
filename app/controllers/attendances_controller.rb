@@ -1,9 +1,30 @@
 class AttendancesController < ApplicationController
+  include BuyersHelper
 
   layout 'primary', :only => [ :index ]
 
+  prawnto :prawn => { :page_layout => :landscape }
+
   def index
-    @buyer_attendances = Attendance.for_show(@current_show).joins(:buyer).order("last_name ASC, first_name ASC")
+    respond_to do | format |
+      format.pdf {
+        attendances = Attendance.for_show(@current_show).joins(:buyer => :store).order("name ASC, last_name ASC, first_name ASC")
+        @buyer_rows = attendances.collect do | attendance |
+          [
+              format_buyer_name(attendance.buyer),
+              safe_string(attendance.buyer.store.name),
+              safe_string(attendance.buyer.store.address),
+              safe_string(attendance.buyer.store.city),
+              safe_string(attendance.buyer.store.state),
+              safe_string(attendance.buyer.store.postal_code),
+              safe_string(attendance.buyer.store.phone)
+          ]
+        end
+      }
+      format.html {
+        @buyer_attendances = Attendance.for_show(@current_show).joins(:buyer).order("last_name ASC, first_name ASC")
+      }
+    end
   end
 
   def non_attending_buyers
@@ -26,6 +47,12 @@ class AttendancesController < ApplicationController
   def destroy
     Attendance.destroy(params[:id])
     redirect_to attendances_path
+  end
+
+  private
+
+  def safe_string(value)
+    (value) ? value.to_s : ''
   end
 
 

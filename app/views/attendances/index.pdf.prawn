@@ -1,7 +1,6 @@
-header = [ 'Name', 'Store Name', 'Store Address', 'City', 'State', 'ZIP' ]
+header = [ 'Buyer', 'Store Name', 'Address', 'City', 'State', 'ZIP', 'Phone' ]
 
-# pdf.text "Hello"
-pdf.table([ header ] + @buyer_list,
+pdf.table([ header ] + @buyer_rows,
          :header => true,
          :width => pdf.bounds.width,
          :cell_style => { :size => 10 }) do
