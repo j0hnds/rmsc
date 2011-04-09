@@ -29,9 +29,18 @@
           </ul>
         </div>
       </li>
-      <li class="last"><%= link_to span_menu("Exhibitors"), exhibitors_path %></li>
-      <li class="last"><%= link_to span_menu("Registrations"), registrations_path %></li>
-      <li class="last"><%= link_to span_menu("Attendance"), attendances_path %></li>
+      <li><%= link_to span_menu("Exhibitors"), exhibitors_path %></li>
+      <li><%= link_to span_menu("Registrations"), registrations_path %></li>
+      <li><%= link_to span_menu("Attendance"), attendances_path %></li>
+      <li class="last">
+        <%= link_to span_menu("Documents"), "#", :class => "parent" %>
+        <div>
+          <ul>
+            <li><%= link_to span_menu("Booklet"), booklets_path('pdf') %></li>
+            <li><%= link_to span_menu("Buyers"), buyers_path('pdf') %></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 </header>
