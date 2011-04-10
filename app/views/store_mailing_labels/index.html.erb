@@ -1,0 +1,31 @@
+<% if @stores.empty? %>
+  <p>There are no stores in the system.</p>
+<% else %>
+<%= form_tag print_store_mailing_labels_path('pdf'), :method => 'post' do %>
+<table>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <thead>
+    <tr>
+      <th>Send Mail</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stores.each do | store | %>
+    <tr>
+      <td><%= check_box_tag 'stores_to_mail[]', store.id %></td>
+      <td><%= store.name %></td>
+      <td><%= store.address %><br><%= "#{store.city}, #{store.state}  #{store.postal_code}" %></td>
+      <td><%= store.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= submit_tag 'Print Mailing Labels' %>
+<% end %>
+<% end %>

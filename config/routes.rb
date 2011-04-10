@@ -52,6 +52,10 @@ Rmsc::Application.routes.draw do
     post :search, :on => :collection
   end
 
+  resources :store_mailing_labels do
+    post :print, :on => :collection
+  end
+
   resources :venues do
     post :search, :on => :collection
   end

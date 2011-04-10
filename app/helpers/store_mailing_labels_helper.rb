@@ -1,0 +1,2 @@
+module StoreMailingLabelsHelper
+end
