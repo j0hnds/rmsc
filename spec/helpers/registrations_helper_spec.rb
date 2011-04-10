@@ -1,15 +1,17 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the RegistrationsHelper. For example:
-#
-# describe RegistrationsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe RegistrationsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should format exhibitor options" do
+    ex1 = Factory.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'One')
+    ex2 = Factory.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'Two')
+
+    options = helper.exhibitor_options([ ex1, ex2 ])
+
+    options.should_not be_nil
+    options.size.should == 2
+    options.first.should == [ 'One, Exhibitor', ex1.id ]
+    options.second.should == [ 'Two, Exhibitor', ex2.id ]
+  end
+
 end

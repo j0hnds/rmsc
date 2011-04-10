@@ -1,15 +1,5 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the BookletsHelper. For example:
-#
-# describe BookletsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe BookletsHelper do
 
   it "should correctly format a coordinator's name" do
@@ -24,12 +14,12 @@ describe BookletsHelper do
 
   it "should correctly format a singular room when an exhibitor has only one room" do
     rooms = [ Room.new(:room => '1001') ]
-    helper.exhibitor_rooms(rooms).should == 'Room: 1001'
+    helper.exhibitor_rooms(rooms).should == 'Room: #1001'
   end
 
   it "should correctly format a plural room when an exhibitor has more than one room" do
     rooms = [ Room.new(:room => '1001'), Room.new(:room => '2001') ]
-    helper.exhibitor_rooms(rooms).should == 'Rooms: 1001, 2001'
+    helper.exhibitor_rooms(rooms).should == 'Rooms: #1001, #2001'
   end
 
   it "should correctly format an exhibitor's address" do

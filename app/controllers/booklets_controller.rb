@@ -2,7 +2,7 @@ class BookletsController < ApplicationController
   include BookletsHelper
 
   def index
-    @show_exhibitor_count = (@current_show.exhibitors.count / 10) * 10
+    @show_exhibitor_count = @current_show.exhibitors.count
     @show_line_count = Line.for_show(@current_show).collect(&:line).uniq.count
 
     @exhibitors = @current_show.exhibitors.ordered_by_name
