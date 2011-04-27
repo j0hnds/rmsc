@@ -16,6 +16,7 @@ class Buyer < ActiveRecord::Base
   scope :not_in_show, lambda { | show | { :conditions => [ "id not in (select buyer_id from attendances where show_id = ?)", show.id ]}}
   scope :master_list, joins(:store).order('`stores`.name ASC, `buyers`.last_name, `buyers`.first_name')
 
+  # The page size for mislav will paginate.
   @@per_page = 30
 
 end
