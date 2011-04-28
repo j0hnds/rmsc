@@ -1,5 +1,5 @@
-column_gutter = 12
-row_gutter = 10
+column_gutter = 9 # 12
+row_gutter = 0 # 10
 cell_width = (pdf.bounds.width - (2 * column_gutter))  / 3
 cell_height = (pdf.bounds.height - (9 * row_gutter)) / 10
 
@@ -20,9 +20,12 @@ page_number = 0
     col = idx % 3
     row = idx / 3
     pdf.bounding_box(upper_lefts[idx], :width => cell_width, :height => cell_height) do
+      pdf.move_down 13.5
+      pdf.indent 13.5 do
       pdf.text(store.name, :size => 10)
       pdf.text(store.address, :size => 10)
       pdf.text("#{store.city}, #{store.state}  #{store.postal_code}", :size => 10)
+      end
       pdf.stroke_bounds
     end
   end

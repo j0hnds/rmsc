@@ -1,4 +1,6 @@
 module ShowHelper
+  include CoordinatorHelper
+  include VenueHelper
 
   DATE_FORMAT = "%Y-%m-%d"
 

@@ -6,6 +6,6 @@ module VenueHelper
   end
 
   def format_venue(venue)
-    "#{venue.name}, #{venue.address_1} #{venue.city}"
+    "#{venue.name} - #{venue.address_1}, #{venue.city}"
   end
 end

@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ExhibitorsHelper. For example:
-#
-# describe ExhibitorsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe ExhibitorsHelper do
 
   before(:each) do
-    @exhibitor = Factory.create(:exhibitor, :first_name => 'Joe', :last_name => 'Exhibitor')
+    @exhibitor = Factory.create(:exhibitor, 
+                                :first_name => 'Joe', 
+                                :last_name => 'Exhibitor',
+                                :address => '123 Main Street',
+                                :city => 'Atlanta',
+                                :state => 'GA',
+                                :postal_code => '90118')
   end
 
   it "knows how to correctly format an exhibitor name" do
     helper.format_exhibitor_name(@exhibitor).should == "Exhibitor, Joe"
+  end
+
+  it "knows how to format an exhibitor address" do
+    helper.format_exhibitor_address(@exhibitor).should == '123 Main Street<br>Atlanta, GA 90118'
   end
 end

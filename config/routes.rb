@@ -33,6 +33,10 @@ Rmsc::Application.routes.draw do
     post :search, :on => :collection
   end
 
+  resources :exhibitor_name_badges do
+    post :print, :on => :collection
+  end
+
   resources :registrations do
     post :room, :on => :collection
     post :lines, :on => :collection

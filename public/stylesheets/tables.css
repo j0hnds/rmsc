@@ -7,8 +7,8 @@ table.data {
     font-size: smaller;
 }
 table.data > thead > tr {
-    background-color: #3AA6D0;
-    border-bottom-color: #0776A0;
+    background-color: #FFC773;
+    border-bottom-color: #A66300;
     border-bottom-style: ridge;
     /* border-bottom-width: thick; */
 }
@@ -27,9 +27,9 @@ table.data td {
 }
 
 tr.odd {
-    background-color: #3AA6D0;
+    background-color: #FFFCBB;
 }
 
 tr.even {
-    background-color: #62B1D0;
+    background-color: #ffffff;
 }

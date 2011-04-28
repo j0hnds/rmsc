@@ -99,11 +99,11 @@
 /* menu::level >= 2 */
 #menu ul ul {width: 150px;}
 #menu li li{
-	  background:#FF9000;
+	  background:#FF9900;
 	  border-bottom:1px solid #FFAB3E;}
 #menu li li a {
     position:static;
-    background:#FF9000;
+    background:#FF9900;
     white-space:normal;
     text-align: center;
     color:#FFF;
@@ -118,7 +118,7 @@
 #menu li.current li span {
     color:#FFF;
 }
-#menu li li a:hover { background:#FA7E04; }
+#menu li li a:hover { background:#FF99FF; }
 #menu li li a span { color:#fff; line-height: 15px; padding: 10px;	}
 #menu li li a:hover span { color:#ffffff; }
 #menu li li a.parent span{background:transparent url(/images/menu/arrow.gif) no-repeat scroll right 50%; z-index:10;  }

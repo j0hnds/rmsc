@@ -1,0 +1,29 @@
+<% if @exhibitors.empty? %>
+  <p>There are no exhibitors in the system.</p>
+<% else %>
+<%= form_tag print_exhibitor_name_badges_path('pdf'), :method => 'post' do %>
+<table>
+  <col/>
+  <col/>
+  <col/>
+  <col/>
+  <thead>
+    <tr>
+      <th>Name Badge</th>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exhibitors.each do | exhibitor | %>
+    <tr>
+      <td><%= check_box_tag 'exhibitors_needing_name_badges[]', exhibitor.id %></td>
+      <td><%= format_exhibitor_name(exhibitor) %></td>
+      <td><%= format_exhibitor_address(exhibitor) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= submit_tag 'Print Name Badges' %>
+<% end %>
+<% end %>
