@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     @search = session[key]
   end
 
+  # Get the search term
   def search_key
     "#{request[:controller]}_search"
   end
