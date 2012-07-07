@@ -3,10 +3,10 @@ require "spec_helper"
 describe Registration do
 
   before(:each) do
-    @coordinator = Factory.create(:coordinator)
-    @venue = Factory.create(:venue)
-    @show = Factory.create(:show, :coordinator => @coordinator, :venue => @venue)
-    @exhibitor = Factory.create(:exhibitor)
+    @coordinator = FactoryGirl.create(:coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @show = FactoryGirl.create(:show, :coordinator => @coordinator, :venue => @venue)
+    @exhibitor = FactoryGirl.create(:exhibitor)
   end
 
   it "should tie an exhibitor to a show" do
@@ -95,7 +95,7 @@ describe Registration do
   end
 
   it "should allow a specific show registration to be selected" do
-    Registration.create(:show => Factory.create(:show, :coordinator => @coordinator, :venue => @venue), :exhibitor => @exhibitor)
+    Registration.create(:show => FactoryGirl.create(:show, :coordinator => @coordinator, :venue => @venue), :exhibitor => @exhibitor)
     registration = Registration.create(:show => @show, :exhibitor => @exhibitor)
     room1 = Room.new(:room => '2201')
 

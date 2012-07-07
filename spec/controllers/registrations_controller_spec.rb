@@ -5,16 +5,16 @@ describe RegistrationsController do
   before(:each) do
 
     # Create a show
-    @venue = Factory.create(:venue)
-    @coordinator = Factory.create(:coordinator)
-    @show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @coordinator = FactoryGirl.create(:coordinator)
+    @show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # Create 3 exhibitors and register them
-    exhibitor = Factory.create(:exhibitor, :first_name => "Zebulon", :last_name => "Pike")
+    exhibitor = FactoryGirl.create(:exhibitor, :first_name => "Zebulon", :last_name => "Pike")
     @show.register_exhibitor(exhibitor, "line 1,line 2")
-    exhibitor = Factory.create(:exhibitor, :first_name => "Rustaceous", :last_name => "Oberon")
+    exhibitor = FactoryGirl.create(:exhibitor, :first_name => "Rustaceous", :last_name => "Oberon")
     @show.register_exhibitor(exhibitor, nil, "Jim Franklin")
-    exhibitor = Factory.create(:exhibitor, :first_name => "Al", :last_name => "Alano")
+    exhibitor = FactoryGirl.create(:exhibitor, :first_name => "Al", :last_name => "Alano")
     @show.register_exhibitor(exhibitor)
   end
 

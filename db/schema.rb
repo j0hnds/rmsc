@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -29,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.string   "phone",      :limit => 12
     t.string   "email",      :limit => 80
     t.integer  "store_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "coordinators", :force => true do |t|
@@ -38,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.string   "last_name",  :limit => 20, :null => false
     t.string   "email",                    :null => false
     t.string   "phone",      :limit => 14, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "exhibitors", :force => true do |t|
@@ -53,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.string   "fax",         :limit => 12
     t.string   "cell",        :limit => 12
     t.string   "email",       :limit => 80
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "lines", :force => true do |t|
@@ -81,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.date     "next_end_date"
     t.integer  "coordinator_id"
     t.integer  "venue_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "stores", :force => true do |t|
@@ -94,8 +95,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.string   "phone",       :limit => 12
     t.string   "fax",         :limit => 12
     t.string   "email",       :limit => 80
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "venues", :force => true do |t|
@@ -105,8 +106,8 @@ ActiveRecord::Schema.define(:version => 20110307150433) do
     t.string   "city",        :limit => 60
     t.string   "state",       :limit => 2
     t.string   "postal_code", :limit => 10
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "phone",       :limit => 12
     t.string   "fax",         :limit => 12
     t.string   "reservation", :limit => 12

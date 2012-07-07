@@ -3,7 +3,7 @@ require 'spec_helper'
 describe CoordinatorsController do
 
   before(:each) do
-    @coordinator1 = Factory.create(:coordinator)
+    @coordinator1 = FactoryGirl.create(:coordinator)
   end
 
   it "should render the index template for the index page" do

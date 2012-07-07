@@ -3,9 +3,9 @@ require 'spec_helper'
 describe ShowsController do
 
   before(:each) do
-    @venue = Factory.create(:venue)
-    @coordinator = Factory.create(:coordinator)
-    @show1 = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @coordinator = FactoryGirl.create(:coordinator)
+    @show1 = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
   end
 
   it "should render the index template for the index page" do

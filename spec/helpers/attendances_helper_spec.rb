@@ -3,9 +3,9 @@ require 'spec_helper'
 describe AttendancesHelper do
 
   it "should format buyer options" do
-    store = Factory.create(:store)
-    buyer1 = Factory.create(:buyer, :store => store, :first_name => "Buyer", :last_name => "One")
-    buyer2 = Factory.create(:buyer, :store => store, :first_name => "Buyer", :last_name => "Two")
+    store = FactoryGirl.create(:store)
+    buyer1 = FactoryGirl.create(:buyer, :store => store, :first_name => "Buyer", :last_name => "One")
+    buyer2 = FactoryGirl.create(:buyer, :store => store, :first_name => "Buyer", :last_name => "Two")
 
     options = helper.buyer_options([buyer1, buyer2])
     options.should_not be_nil

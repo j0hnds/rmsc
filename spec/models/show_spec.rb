@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Show do
 
   before(:each) do
-    @venue = Factory.create(:venue)
-    @coordinator = Factory.create(:coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @coordinator = FactoryGirl.create(:coordinator)
   end
 
   it "should determine the correct dates for the next show based on the specified date" do
@@ -23,22 +23,22 @@ describe Show do
   end
 
   it "should successfully create a show with all valid data" do
-    show = Factory.build(:show, :venue => @venue, :coordinator => @coordinator)
+    show = FactoryGirl.build(:show, :venue => @venue, :coordinator => @coordinator)
     show.valid?.should be_true
   end
 
   it "should not allow a name longer than 40 characters" do
-    show = Factory.build(:show, :venue => @venue, :coordinator => @coordinator, :name => "a" * 41)
+    show = FactoryGirl.build(:show, :venue => @venue, :coordinator => @coordinator, :name => "a" * 41)
     show.valid?.should be_false
     show.errors[:name].empty?.should be_false
   end
 
   it "should create a default room assignment with no lines and associates if no prior registration is available and no lines or associates have been specified" do
     # Create an exhibitor
-    ex = Factory.create(:exhibitor) # No pre-existing registrations to other shows
+    ex = FactoryGirl.create(:exhibitor) # No pre-existing registrations to other shows
 
     # Create a show to register the exhibitor with
-    show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # register the exhibitor with the show
     show.register_exhibitor(ex)
@@ -67,10 +67,10 @@ describe Show do
 
   it "should create a default room assignment with lines and associates if no prior registration is available and lines and associates have been specified" do
     # Create an exhibitor
-    ex = Factory.create(:exhibitor) # No pre-existing registrations to other shows
+    ex = FactoryGirl.create(:exhibitor) # No pre-existing registrations to other shows
 
     # Create a show to register the exhibitor with
-    show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # register the exhibitor with the show
     show.register_exhibitor(ex, " line 1 , line 2 ", " John Smith , Henrietta Johnson ")
@@ -104,10 +104,10 @@ describe Show do
   end
 
   it "should clone an exhibitor's previous registration information" do
-    ex = Factory.create(:exhibitor) # No pre-existing registrations to other shows
+    ex = FactoryGirl.create(:exhibitor) # No pre-existing registrations to other shows
 
     # Create a show to register the exhibitor with
-    prior_show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    prior_show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # register the exhibitor with the show. This will end up being the
     # prior registration
@@ -117,7 +117,7 @@ describe Show do
     prior_registration.rooms.first.update_attributes(:room => '303')
 
     # Create the new show to which the exhibitor will be registered
-    new_show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator, :name => 'New Show')
+    new_show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator, :name => 'New Show')
 
     # register the exhibitor with the new show.
     new_show.register_exhibitor(ex)
@@ -151,10 +151,10 @@ describe Show do
   end
 
   it "should clone an exhibitor's previous registration information with the lines and associates overridden" do
-    ex = Factory.create(:exhibitor) # No pre-existing registrations to other shows
+    ex = FactoryGirl.create(:exhibitor) # No pre-existing registrations to other shows
 
     # Create a show to register the exhibitor with
-    prior_show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    prior_show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # register the exhibitor with the show. This will end up being the
     # prior registration
@@ -164,7 +164,7 @@ describe Show do
     prior_registration.rooms.first.update_attributes(:room => '303')
 
     # Create the new show to which the exhibitor will be registered
-    new_show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator, :name => 'New Show')
+    new_show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator, :name => 'New Show')
 
     # register the exhibitor with the new show.
     new_show.register_exhibitor(ex, " line 3 , line 4, line 5", " Jim Jameson")

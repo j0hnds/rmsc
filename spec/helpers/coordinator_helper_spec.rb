@@ -3,7 +3,7 @@ require 'spec_helper'
 describe CoordinatorHelper do
 
   it "should format a coordinator name" do
-    coord = Factory.build(:coordinator, 
+    coord = FactoryGirl.build(:coordinator, 
                           :first_name => 'Joe', 
                           :last_name => 'Coordinator')
 

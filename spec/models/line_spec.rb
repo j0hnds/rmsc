@@ -5,7 +5,7 @@ describe Line do
   LINES_CSV = "line 1, line 2, line 3, line 4"
 
   before(:each) do
-    @room = Factory.create(:room, :registration_id => 1)
+    @room = FactoryGirl.create(:room, :registration_id => 1)
   end
 
   it "allow a line to be moved up in ordering" do

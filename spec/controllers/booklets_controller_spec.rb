@@ -3,13 +3,13 @@ require 'spec_helper'
 describe BookletsController do
 
   before(:each) do
-    @venue = Factory.create(:venue)
-    @coordinator = Factory.create(:coordinator)
-    @show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @coordinator = FactoryGirl.create(:coordinator)
+    @show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
     # Create two exhibitors to register with the show
-    @exhibitor1 = Factory.create(:exhibitor, :first_name => 'John', :last_name => 'Smith')
-    @exhibitor2 = Factory.create(:exhibitor, :first_name => 'Sam', :last_name => 'Hagar')
+    @exhibitor1 = FactoryGirl.create(:exhibitor, :first_name => 'John', :last_name => 'Smith')
+    @exhibitor2 = FactoryGirl.create(:exhibitor, :first_name => 'Sam', :last_name => 'Hagar')
 
     # Register each of the exhibitors with the show
     registration = @show.register_exhibitor @exhibitor1, "Line 2, Line 1"

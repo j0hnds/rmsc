@@ -6,9 +6,9 @@ class Line < ActiveRecord::Base
   validates :order, :presence => true
   validates :line, :presence => true, :length => { :minimum => 1, :maximum => 80 }
 
-  scope :ordered, order("`order` ASC")
-  scope :for_show, lambda { | show | joins(:room => :registration).where('show_id = ?', show.id).order('`line` ASC') }
-  scope :for_exhibitor, lambda { | show, exhibitor | joins(:room => :registration).where('show_id = ? AND exhibitor_id = ?', show.id, exhibitor.id).order('`order` ASC, `line` ASC' ) } 
+  scope :ordered, order("lines.order ASC")
+  scope :for_show, lambda { | show | joins(:room => :registration).where('show_id = ?', show.id).order('line ASC') }
+  scope :for_exhibitor, lambda { | show, exhibitor | joins(:room => :registration).where('show_id = ? AND exhibitor_id = ?', show.id, exhibitor.id).order('lines.order ASC, line ASC' ) } 
 
   def move_up
     # Get the list of all lines for this room

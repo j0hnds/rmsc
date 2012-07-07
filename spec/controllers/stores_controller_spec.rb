@@ -3,7 +3,7 @@ require 'spec_helper'
 describe StoresController do
 
   before(:each) do
-    @store1 = Factory.create(:store)
+    @store1 = FactoryGirl.create(:store)
   end
 
   it "should render the index template for the index page" do

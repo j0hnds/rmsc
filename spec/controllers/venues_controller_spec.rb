@@ -3,7 +3,7 @@ require 'spec_helper'
 describe VenuesController do
 
   before(:each) do
-    @venue1 = Factory.create(:venue)
+    @venue1 = FactoryGirl.create(:venue)
   end
 
   it "should render the index template for the index page" do

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ExhibitorsController do
 
   before(:each) do
-    @exhibitor1 = Factory.create(:exhibitor)
+    @exhibitor1 = FactoryGirl.create(:exhibitor)
   end
 
   it "should render the index template for the index page" do

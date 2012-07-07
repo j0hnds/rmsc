@@ -4,8 +4,8 @@ describe BuyersController do
 
 
   before(:each) do
-    @store = Factory.create(:store)
-    @buyer1 = Factory.create(:buyer, :store => @store)
+    @store = FactoryGirl.create(:store)
+    @buyer1 = FactoryGirl.create(:buyer, :store => @store)
   end
 
   it "should render the index template for the index page" do

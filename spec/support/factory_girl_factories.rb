@@ -1,86 +1,90 @@
-Factory.sequence :name do |n|
-  "Name#{n}"
-end
+FactoryGirl.define do
 
-Factory.sequence :line do |n|
-  "Line #{n}"
-end
+  sequence :name do |n|
+    "Name#{n}"
+  end
 
-Factory.sequence :room do |n|
-  (n + 1).to_s
-end
+  sequence :line do |n|
+    "Line #{n}"
+  end
 
-Factory.define :coordinator do |f|
-  f.first_name Factory.next :name
-  f.last_name Factory.next :name
-  f.phone '303 333 3333'
-  f.email 'joe.smith@email.com'
-end
+  sequence :room do |n|
+    (n + 1).to_s
+  end
 
-Factory.define :venue do |f|
-  f.name Factory.next :name
-  f.address_1 '101 Main Street'
-  f.city 'Santa Monica'
-  f.state 'SD'
-  f.postal_code '11100-2222'
-  f.phone '101 111 1111'
-  f.fax '202 222 2222'
-end
+  factory :coordinator do
+    first_name { generate(:name) }
+    last_name { generate(:name) }
+    phone '303 333 3333'
+    email 'joe.smith@email.com'
+  end
 
-# For create, must specify a venue and a coordinator
-Factory.define :show do |f|
-  f.name Factory.next :name
-  f.start_date Date.today
-  f.end_date Date.today + 1.day
-  f.next_start_date Date.today
-  f.next_end_date Date.today + 1.day
-end
+  factory :venue do
+    name { generate(:name) }
+    address_1 '101 Main Street'
+    city 'Santa Monica'
+    state 'SD'
+    postal_code '11100-2222'
+    phone '101 111 1111'
+    fax '202 222 2222'
+  end
 
-Factory.define :exhibitor do |f|
-  f.first_name Factory.next :name
-  f.last_name Factory.next :name
-  f.address '123 Main St'
-  f.city 'San Andreas'
-  f.state 'GA'
-  f.postal_code '01101-2345'
-  f.phone '202-222-2222'
-  f.fax '202-222-2222'
-  f.cell '202-222-2222'
-  f.email 'joe.exhibitor@mail.com'
-end
+  # For create, must specify a venue and a coordinator
+  factory :show do
+    name { generate(:name) }
+    start_date Date.today
+    end_date Date.today + 1.day
+    next_start_date Date.today
+    next_end_date Date.today + 1.day
+  end
 
-Factory.define :store do |f|
-  f.name Factory.next :name
-  f.address '123 Main'
-  f.city 'Aberdeen'
-  f.state 'CT'
-  f.postal_code '90111'
-  f.phone '303 333 3333'
-  f.fax '404 444 4444'
-  f.email 'shoe_store@mail.com'
-end
+  factory :exhibitor do
+    first_name { generate(:name) }
+    last_name { generate(:name) }
+    address '123 Main St'
+    city 'San Andreas'
+    state 'GA'
+    postal_code '01101-2345'
+    phone '202-222-2222'
+    fax '202-222-2222'
+    cell '202-222-2222'
+    email 'joe.exhibitor@mail.com'
+  end
 
-Factory.define :buyer do |f|
-  f.first_name Factory.next :name
-  f.last_name Factory.next :name
-  f.phone '303 333 3333'
-  f.email 'joe.buyer@mail.com'
-end
+  factory :store do
+    name { generate(:name) }
+    address '123 Main'
+    city 'Aberdeen'
+    state 'CT'
+    postal_code '90111'
+    phone '303 333 3333'
+    fax '404 444 4444'
+    email 'shoe_store@mail.com'
+  end
 
-Factory.define :registration do |f|
+  factory :buyer do
+    first_name { generate(:name) }
+    last_name { generate(:name) }
+    phone '303 333 3333'
+    email 'joe.buyer@mail.com'
+  end
 
-end
+  factory :registration do
 
-Factory.define :room do |f|
-  f.room Factory.next :room
-end
+  end
 
-Factory.define :associate do |f|
-  f.first_name Factory.next :name
-  f.last_name Factory.next :name
-end
+  factory :room do
+    room { generate(:room) }
+  end
 
-Factory.define :line do |f|
-  f.order 1
-  f.line Factory.next :line
+  factory :associate do
+    first_name { generate(:name) }
+    last_name { generate(:name) }
+  end
+
+  factory :line do
+    order 1
+    line { generate(:line) }
+  end
+
 end

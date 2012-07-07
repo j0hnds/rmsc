@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ExhibitorsHelper do
 
   before(:each) do
-    @exhibitor = Factory.create(:exhibitor, 
+    @exhibitor = FactoryGirl.create(:exhibitor, 
                                 :first_name => 'Joe', 
                                 :last_name => 'Exhibitor',
                                 :address => '123 Main Street',

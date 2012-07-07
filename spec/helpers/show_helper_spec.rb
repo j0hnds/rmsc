@@ -3,10 +3,10 @@ require 'spec_helper'
 describe ShowHelper do
 
   it "should format the coordinator options" do
-    c1 = Factory.create(:coordinator, 
+    c1 = FactoryGirl.create(:coordinator, 
                         :first_name => 'One',
                         :last_name => 'Coordinator')
-    c2 = Factory.create(:coordinator, 
+    c2 = FactoryGirl.create(:coordinator, 
                         :first_name => 'Two',
                         :last_name => 'Coordinator')
 
@@ -19,13 +19,13 @@ describe ShowHelper do
   end
 
   it "should format the venue options" do
-    v1 = Factory.create(:venue,
+    v1 = FactoryGirl.create(:venue,
                         :name => 'Venue1',
                         :address_1 => '123 Main Street',
                         :city => 'Atlanta',
                         :state => 'GA',
                         :postal_code => '90118')
-    v2 = Factory.create(:venue,
+    v2 = FactoryGirl.create(:venue,
                         :name => 'Venue2',
                         :address_1 => '234 Main Street',
                         :city => 'Atlanta',
@@ -48,10 +48,10 @@ describe ShowHelper do
   end
 
   it "should format a set of show options" do
-    v = Factory.create(:venue)
-    c = Factory.create(:coordinator)
-    s1 = Factory.create(:show, :venue => v, :coordinator => c, :name => 'Show1')
-    s2 = Factory.create(:show, :venue => v, :coordinator => c, :name => 'Show2')
+    v = FactoryGirl.create(:venue)
+    c = FactoryGirl.create(:coordinator)
+    s1 = FactoryGirl.create(:show, :venue => v, :coordinator => c, :name => 'Show1')
+    s2 = FactoryGirl.create(:show, :venue => v, :coordinator => c, :name => 'Show2')
 
     options = helper.show_options([ s1, s2 ])
     options.should_not be_nil

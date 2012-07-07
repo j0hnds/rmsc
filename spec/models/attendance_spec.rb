@@ -3,12 +3,12 @@ require "spec_helper"
 describe Attendance do
 
   before(:each) do
-    @venue = Factory.create(:venue)
-    @coordinator = Factory.create(:coordinator)
-    @show = Factory.create(:show, :venue => @venue, :coordinator => @coordinator)
+    @venue = FactoryGirl.create(:venue)
+    @coordinator = FactoryGirl.create(:coordinator)
+    @show = FactoryGirl.create(:show, :venue => @venue, :coordinator => @coordinator)
 
-    @store = Factory.create(:store)
-    @buyer = Factory.create(:buyer, :store => @store)
+    @store = FactoryGirl.create(:store)
+    @buyer = FactoryGirl.create(:buyer, :store => @store)
   end
 
   it "should tie a buyer to a show" do

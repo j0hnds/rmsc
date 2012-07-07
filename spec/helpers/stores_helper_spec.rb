@@ -13,7 +13,7 @@ require 'spec_helper'
 describe StoresHelper do
 
   it "should format a store address" do
-    store = Factory.build(:store)
+    store = FactoryGirl.build(:store)
     helper.format_store_address(store).should == "123 Main<br>Aberdeen, CT 90111"
   end
 end

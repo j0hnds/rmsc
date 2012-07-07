@@ -3,8 +3,8 @@ require 'spec_helper'
 describe RegistrationsHelper do
 
   it "should format exhibitor options" do
-    ex1 = Factory.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'One')
-    ex2 = Factory.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'Two')
+    ex1 = FactoryGirl.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'One')
+    ex2 = FactoryGirl.create(:exhibitor, :first_name => 'Exhibitor', :last_name => 'Two')
 
     options = helper.exhibitor_options([ ex1, ex2 ])
 

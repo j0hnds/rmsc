@@ -2,7 +2,7 @@ class ExhibitorNameBadgesController < ApplicationController
 
   layout 'primary', :only => [ :index ]
 
-  AVERY_XXXX_MARGIN = 13.5 # 16 # 0.21975in * 72ppi = 15.82
+  AVERY_5160_MARGIN = 13.5 # 16 # 0.21975in * 72ppi = 15.82
   TOP_BOTTOM_MARGIN = 36
 
   prawnto :prawn => {
