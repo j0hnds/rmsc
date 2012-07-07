@@ -43,8 +43,8 @@ $(function(){
 	// Handle AJAX form posts
 	$('.ajaxed').livequery(function(){
 		$(this).submit(function(event){
-			// Load required resources
-			if(!$.simpleAjax){$.require('jquery/jquery.simpleAjax.js');}
+		    // Load required resources
+		    if(!$.simpleAjax){$.require('jquery/jquery.simpleAjax.js');}
 			// Submit form
 			$.simpleAjax({
 				block_event : event,
@@ -84,7 +84,7 @@ $(function(){
 		// Add button
 		if(!$.browser.msie || ($.browser.msie && $.browser.version >= 8) ){
 			var $icon = $('<img>')
-						.attr('src','/images/interface/calendar.gif')
+						.attr('src','/assets/interface/calendar.gif')
 						.click(showPicker),
 					$button = $('<div>')
 						.addClass('date_picker_calendar')
@@ -110,21 +110,3 @@ $(function(){
 
 });
 
-/* PLUGINS */
-
-(function($) {
-
-    /*
-      REQUIRE PLUGIN
-      ------------------------------
-      if(!$.fn.skipLogic){$.require('jquery.skipLogic.js');}
-     */
-    $.require = function(resource) {
-	$('<script/>')
-	    .attr({
-		src : '/javascripts/' + resource, 
-		type: 'text/javascript'
-	    })
-	    .appendTo('head');
-    };
-})(jQuery);

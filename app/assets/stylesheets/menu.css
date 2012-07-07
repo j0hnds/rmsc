@@ -28,7 +28,7 @@
 #menu .menu {
     position:absolute;
     padding-left: 40px;
-    background: url(/images/menu/header.gif) right top no-repeat;
+    background: url(menu/header.gif) right top no-repeat;
 }
 #menu * {
     list-style:none;
@@ -51,7 +51,7 @@
 #menu div {
     visibility:hidden;
     position:absolute;
-    background:url(/images/menu/pix.gif);
+    background:url(menu/pix.gif);
 }
 #menu div div {
     margin:-35px 0 0 -1px;
@@ -72,19 +72,19 @@
     z-index:77;
 }
 #menu a:hover {
-    background:url(/images/menu/header.gif) left -43px repeat-x;
+    background:url(menu/header.gif) left -43px repeat-x;
     color:#FFF;
 }
 #menu a:hover span { color:#FFF; }
 #menu li.current a {
-    background: transparent url(/images/menu/header_active.gif) repeat-x;
+    background: transparent url(menu/header_active.gif) repeat-x;
     color:#3C4955;
 }
 #menu li.current span {
     color:#3C4955;
 }
 #menu>ul>li:hover>a {
-    background:url(/images/menu/header.gif) left -43px repeat-x;
+    background:url(menu/header.gif) left -43px repeat-x;
     color:#CACFD3;
 }
 #menu>ul>li:hover>a span { color:#FFF; }
@@ -95,7 +95,7 @@
     text-decoration:none;
     color:#ffffff;
 }
-#menu li { background: url(/images/menu/header.gif) left top no-repeat;}
+#menu li { background: url(menu/header.gif) left top no-repeat;}
 /* menu::level >= 2 */
 #menu ul ul {width: 150px;}
 #menu li li{
@@ -121,7 +121,7 @@
 #menu li li a:hover { background:#FF99FF; }
 #menu li li a span { color:#fff; line-height: 15px; padding: 10px;	}
 #menu li li a:hover span { color:#ffffff; }
-#menu li li a.parent span{background:transparent url(/images/menu/arrow.gif) no-repeat scroll right 50%; z-index:10;  }
+#menu li li a.parent span{background:transparent url(menu/arrow.gif) no-repeat scroll right 50%; z-index:10;  }
 
 #menu li li span {
     display:block;
@@ -135,7 +135,7 @@ div#menu {
     top:10px;
     left:0px;
     width:100%;
-	background:transparent url(/images/menu/header_bg.gif) repeat-x 0 0;
+	background:transparent url(menu/header_bg.gif) repeat-x 0 0;
 
 }
 

@@ -19,7 +19,7 @@
 	if(!$.preLoadImages){$.require('jquery/jquery.preLoadImages.js');}
 
 	// Pre load spinner image
-	$.preLoadImages('/images/interface/page_spinner.gif');
+	$.preLoadImages('/assets/interface/page_spinner.gif');
 
 	$.simpleSpinner = function(options){
 

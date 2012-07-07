@@ -13,7 +13,7 @@
     margin: 0;
     font-size: 12px;
     font-weight: bold;
-    background: #d7e2ee url("/images/interface/button_gradient.gif") 0 0 repeat-x;
+    background: #d7e2ee url("/assets/interface/button_gradient.gif") 0 0 repeat-x;
     color: #264C73;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -26,7 +26,7 @@
 }
 
 .pushed {
-	background:#d7e2ee url("/images/interface/button_gradient.gif") 0 -18px repeat-x;
+	background:#d7e2ee url("/assets/interface/button_gradient.gif") 0 -18px repeat-x;
 	}
 
 a.button:hover, a.button_small:hover {
@@ -81,7 +81,7 @@ div.pagination {
 }
 
 div.pagination span, div.pagination a, div.pagination a:link, div.pagination a:visited, div.pagination em {
-    	background:#d7e2ee url("/images/interface/button_gradient.gif") repeat-x;
+    	background:#d7e2ee url("/assets/interface/button_gradient.gif") repeat-x;
 	text-decoration:none;
 	display:block;
 	float:left;
@@ -119,7 +119,7 @@ div.pagination span.previous_page, div.pagination span.next_page div.pagination 
 	position:absolute;
 	top:0;
 	right:-2px;
-	background-image:url("/images/tiles.png");
+	background-image:url("/assets/tiles.png");
 	width:21px;
 	height:20px;
 	border-width:1px;

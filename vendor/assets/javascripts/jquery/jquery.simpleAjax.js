@@ -19,7 +19,7 @@
 (function($){
 
 	/* Load required resources */
-	if(!$.blockUI){$.require('jquery/jquery.blockUI.js');}
+	if(!$.blockUI){$.require('jquery.blockUI.js');}
 	if(!$.simpleConfirm){$.require('jquery/jquery.simpleConfirm.js');}
 	if(!$.simpleSpinner){$.require('jquery/jquery.simpleSpinner.js');}
 
