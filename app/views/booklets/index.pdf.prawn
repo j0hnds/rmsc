@@ -1,7 +1,7 @@
 # Do the title page
 
 # put an image on the page
-pdf.image('public/images/mountains.jpeg', 
+pdf.image('app/assets/images/mountains.jpeg', 
           :position => :center)
 pdf.text('Rocky Mountain', 
          :size => 30, 
@@ -193,7 +193,7 @@ pdf.table([header] + @show_lines,
           :row_colors => [ 'ffffff', 'eeeeee' ],
           :cell_style => { :size => 12 },
           :width => pdf.bounds.width) do
-  row(0).style(:style => :bold, :background_color => 'cccccc')
+  row(0).style(:font_style => :bold, :background_color => 'cccccc')
 end
 
 # Now, do the thank you page
