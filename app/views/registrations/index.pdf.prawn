@@ -9,5 +9,5 @@ pdf.table([header] + @show_lines,
           :row_colors => [ 'ffffff', 'eeeeee' ],
           :cell_style => { :size => 10 },
           :width => pdf.bounds.width) do
-  row(0).style(:style => :bold, :background_color => 'cccccc')
+  row(0).style(:font_style => :bold, :background_color => 'cccccc')
 end
